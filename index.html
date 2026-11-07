@@ -312,15 +312,6 @@
     <!-- ===== HIGH-TECH HERO ===== -->
     <section class="hero">
         <div class="tech-grid-bg"></div>
-        <!-- 3D Interactive WebGL Infrastructure Canvas -->
-        <div class="hero-3d-container">
-            <canvas id="hero3dCanvas"></canvas>
-            <div class="hero-3d-dock">
-                <button class="hero-3d-btn active" onclick="setHero3DMode('mep'); this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active')); this.classList.add('active');">⚡ 3D MEP Grid</button>
-                <button class="hero-3d-btn" onclick="setHero3DMode('solar'); this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active')); this.classList.add('active');">☀️ Solar Flow</button>
-                <button class="hero-3d-btn" onclick="setHero3DMode('cad'); this.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active')); this.classList.add('active');">📐 CAD Wireframe</button>
-            </div>
-        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-left">
@@ -825,8 +816,6 @@
     </script>
     <script src="js/lenis.min.js"></script>
     <script src="js/shadouf-scroll.js"></script>
-    <script src="js/three.min.js"></script>
-    <script src="js/shadouf-3d.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

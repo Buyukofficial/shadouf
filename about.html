@@ -329,21 +329,26 @@
           </div>
         </div>
 
-        <!-- Interactive 3D Shadoof Canvas -->
-        <div class="lever-canvas-box" style="padding:16px;">
-          <div style="display:flex; justify-content:space-between; width:100%; align-items:center; margin-bottom:12px;">
-            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); font-weight:700;" id="leverReadout">
-              3D SHADOOF PHYSICS SIMULATOR · RATIO 3.8:1
+        <!-- Interactive Lever Physics Model -->
+        <div class="lever-canvas-box">
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); margin-bottom:24px;" id="leverReadout">
+            FULCRUM RATIO: 3.8:1 (MAXIMUM MECHANICAL ADVANTAGE)
+          </div>
+
+          <div class="lever-beam" id="leverBeam" style="transform: rotate(-6deg);">
+            <!-- Left Counterweight -->
+            <div style="position:absolute; left:-12px; top:-18px; background:var(--royal-blue); color:#FFFFFF; font-weight:800; font-size:0.7rem; padding:4px 8px; border-radius:4px; box-shadow:0 0 12px rgba(6,106,171,0.3);">
+              AL SHADOUF
             </div>
-            <span style="font-size:0.7rem; color:var(--text-dim); background:#FFFFFF; border:1px solid var(--border-subtle); padding:3px 8px; border-radius:12px;">🖱️ Drag 3D Lever Up/Down</span>
+            <!-- Right Heavy Load -->
+            <div style="position:absolute; right:-12px; top:-18px; background:#0A2540; color:#FFFFFF; font-weight:800; font-size:0.7rem; padding:4px 8px; border-radius:4px;">
+              MEP CONTRACTOR LOAD
+            </div>
           </div>
+          <div class="lever-fulcrum"></div>
 
-          <div style="width:100%; border-radius:12px; overflow:hidden; background:#F8FAFC; border:1px solid var(--border-subtle);">
-            <canvas id="shadoof3dCanvas"></canvas>
-          </div>
-
-          <div style="width:100%; margin-top:20px;">
-            <input type="range" min="-50" max="50" value="-15" style="width:100%; accent-color:var(--royal-blue); cursor:pointer;" id="shadoofSlider" oninput="tiltLever(this.value)">
+          <div style="width:100%; margin-top:28px;">
+            <input type="range" min="-12" max="12" value="-6" style="width:100%; accent-color:var(--royal-blue); cursor:pointer;" id="leverSlider" oninput="tiltLever(this.value)">
             <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-dim); margin-top:6px;">
               <span>Heavy Contractor Load</span>
               <span>Balanced Equilibrium</span>
@@ -582,8 +587,6 @@
 
   <script src="js/lenis.min.js"></script>
   <script src="js/shadouf-scroll.js"></script>
-  <script src="js/three.min.js"></script>
-  <script src="js/shadouf-3d.js"></script>
   <script src="js/main.js"></script>
   <script>
     function tiltLever(val) {

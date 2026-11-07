@@ -356,22 +356,11 @@
           </div>
         </div>
 
-        <!-- Right Diagnostic Radar Console with 3D Holographic MEP Model -->
+        <!-- Right Diagnostic Radar Console -->
         <div class="diagnostic-radar-box">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">3D HOLOGRAPHIC MEP BUILDING INFRASTRUCTURE</span>
-            <span style="font-size:0.72rem; color:var(--emerald-live); font-weight:700;">🟢 LIVE 3D TELEMETRY</span>
-          </div>
-
-          <!-- 3D Multilayer Blueprint Viewport -->
-          <div style="background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:12px; margin-bottom:16px; overflow:hidden; position:relative;">
-            <canvas id="services3dCanvas"></canvas>
-            <div style="position:absolute; bottom:10px; left:10px; right:10px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
-              <button class="hero-3d-btn active" style="background:rgba(255,255,255,0.92); font-size:0.72rem; padding:4px 8px; border:1px solid var(--border-subtle);" onclick="isolateServiceLayer('all')">All Layers</button>
-              <button class="hero-3d-btn" style="background:rgba(255,255,255,0.92); font-size:0.72rem; padding:4px 8px; border:1px solid var(--border-subtle);" onclick="isolateServiceLayer('electrical')">⚡ Power</button>
-              <button class="hero-3d-btn" style="background:rgba(255,255,255,0.92); font-size:0.72rem; padding:4px 8px; border:1px solid var(--border-subtle);" onclick="isolateServiceLayer('solar')">☀️ Solar PV</button>
-              <button class="hero-3d-btn" style="background:rgba(255,255,255,0.92); font-size:0.72rem; padding:4px 8px; border:1px solid var(--border-subtle);" onclick="isolateServiceLayer('hvac')">❄️ HVAC</button>
-            </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">SYSTEM DIAGNOSTIC TELEMETRY</span>
+            <span style="font-size:0.72rem; color:var(--emerald-live); font-weight:700;">🟢 5/5 SYSTEMS ONLINE</span>
           </div>
 
           <div class="radar-node-item">
@@ -771,8 +760,6 @@
 
   <script src="js/lenis.min.js"></script>
   <script src="js/shadouf-scroll.js"></script>
-  <script src="js/three.min.js"></script>
-  <script src="js/shadouf-3d.js"></script>
   <script src="js/main.js"></script>
   <script>
     const blueprintData = [
