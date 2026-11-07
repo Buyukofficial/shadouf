@@ -585,6 +585,69 @@
     </div>
   </section>
 
+  <!-- 3D INTERACTIVE CAD PRODUCT INSPECTION STAGE -->
+  <section style="padding: 20px 0 10px;">
+    <div class="container">
+      <div class="product-3d-stage fade-in">
+        <div class="p3d-header">
+          <div class="p3d-title-group">
+            <span class="p3d-badge">Interactive 3D WebGL</span>
+            <h2 style="font-size:1.4rem; color:var(--navy); margin:0;">Enterprise CAD Product Inspector Stage</h2>
+          </div>
+          <div class="p3d-model-tabs">
+            <button class="p3d-tab-btn active" data-model="enclosure" onclick="selectProduct3D('enclosure')">⚡ Switchgear Enclosure</button>
+            <button class="p3d-tab-btn" data-model="ev_charger" onclick="selectProduct3D('ev_charger')">🔌 ABB Terra EV Charger</button>
+            <button class="p3d-tab-btn" data-model="cleat" onclick="selectProduct3D('cleat')">🔒 Trefoil Cable Cleat</button>
+            <button class="p3d-tab-btn" data-model="earth_bar" onclick="selectProduct3D('earth_bar')">⚡ Furse Copper Earth Bar</button>
+          </div>
+        </div>
+
+        <div class="p3d-viewport-grid">
+          <div class="p3d-canvas-wrapper">
+            <canvas id="product3dCanvas"></canvas>
+            <div class="p3d-toolbar">
+              <div class="p3d-tools-group">
+                <button class="p3d-tool-btn" id="btnWireframe3D" onclick="toggle3DWireframe()">📐 CAD Wireframe</button>
+                <button class="p3d-tool-btn" id="btnExplode3D" onclick="toggle3DExploded()">💥 Exploded View</button>
+                <button class="p3d-tool-btn active" id="btnAutoRotate3D" onclick="toggle3DAutoRotate()">🔄 Auto-Spin</button>
+              </div>
+              <span class="p3d-drag-hint">🖱️ 360° Drag / Touch Orbit</span>
+            </div>
+          </div>
+
+          <div class="p3d-spec-card">
+            <div style="font-size:0.75rem; text-transform:uppercase; color:var(--royal-blue); font-weight:800; letter-spacing:0.06em; margin-bottom:6px;">Inspected Assembly Specifications</div>
+            <h3 id="p3dSpecTitle">IP66 Single Door Steel Distribution Enclosure</h3>
+            <p id="p3dSpecDesc">Heavy-gauge zinc-coated steel, CNC polyurethane gasket, modular chassis with full DIN rail capacity and Form 2/4 separation.</p>
+            
+            <div class="p3d-stats-row">
+              <div class="p3d-stat-item">
+                <div class="p3d-stat-val">IP66 / IK10</div>
+                <div class="p3d-stat-lbl">Protection Rating</div>
+              </div>
+              <div class="p3d-stat-item">
+                <div class="p3d-stat-val">100% Copper</div>
+                <div class="p3d-stat-lbl">Internal Busbar</div>
+              </div>
+              <div class="p3d-stat-item">
+                <div class="p3d-stat-val">DEWA / SEWA</div>
+                <div class="p3d-stat-lbl">Utility Approval</div>
+              </div>
+              <div class="p3d-stat-item">
+                <div class="p3d-stat-val">ISO 9001</div>
+                <div class="p3d-stat-lbl">QA Verified</div>
+              </div>
+            </div>
+
+            <div style="margin-top:20px; display:flex; gap:10px;">
+              <a href="#quote" class="btn btn-primary btn-sm" style="flex:1; justify-content:center;">Request Quote for This Assembly →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DISCIPLINE FILTER & VIEW ENGINE -->
   <section class="section" style="padding-top:30px;">
     <div class="container">
@@ -1348,6 +1411,8 @@
     </div>
   </footer>
 
+  <script src="js/three.min.js"></script>
+  <script src="js/shadouf-3d.js"></script>
   <script src="js/main.js"></script>
   <script>
     let currentBOQ = JSON.parse(localStorage.getItem('alshadouf_boq') || '[]');
