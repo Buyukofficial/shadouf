@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Al Shadouf Group Verified MEP Product Inventory: Electrical conduits, cable cleats, ABB Terra EV chargers, switchgear enclosures, Furse copper earth bars, and drainage pipes.">
+  <title>Engineering Product Inventory & Live BOQ Builder | Al Shadouf Group — UAE</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* LIGHT THEME PRODUCTS PAGE CONSOLE */
+    .products-hero-terminal {
+      padding-top: 100px;
+      padding-bottom: 40px;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(6, 106, 171, 0.08), transparent 50%),
+                  radial-gradient(circle at 20% 80%, rgba(2, 132, 199, 0.06), transparent 50%),
+                  #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .warehouse-ticker-strip {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 0;
+      font-size: 0.82rem;
+      font-family: var(--font-mono, monospace);
+      color: #38BDF8;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-content {
+      display: inline-block;
+      animation: tickerScroll 35s linear infinite;
+    }
+    @keyframes tickerScroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .terminal-hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    @media (max-width: 900px) {
+      .terminal-hero-grid { grid-template-columns: 1fr; }
+    }
+    .terminal-hero-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero-search-box {
+      position: relative;
+      margin-top: 24px;
+    }
+    .hero-search-input {
+      width: 100%;
+      padding: 18px 24px 18px 54px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      font-size: 1.05rem;
+      outline: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-card);
+    }
+    .hero-search-input:focus {
+      border-color: var(--blue-primary);
+      box-shadow: 0 0 25px rgba(6, 106, 171, 0.2);
+    }
+    .hero-search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3rem;
+      color: var(--blue-primary);
+    }
+    .spotlight-material-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+    }
+    .spotlight-material-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: var(--blue-gradient);
+    }
+
+    /* Discipline Filter Buttons */
+    .filter-btn-tech {
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .filter-btn-tech:hover, .filter-btn-tech.active {
+      background: var(--blue-gradient);
+      color: #FFFFFF;
+      border-color: var(--blue-primary);
+      font-weight: 800;
+      box-shadow: 0 4px 18px rgba(6, 106, 171, 0.3);
+    }
+
+    /* Product Cards Styling */
+    .product-grid-view {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 992px) {
+      .product-grid-view { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .product-grid-view { grid-template-columns: 1fr; }
+    }
+    .product-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+      box-shadow: var(--shadow-card);
+    }
+    .product-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue-primary);
+      box-shadow: 0 16px 40px rgba(6, 106, 171, 0.16);
+    }
+    .product-thumb-container {
+      height: 220px;
+      background: #F8FAFC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .product-thumb-img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.35s ease;
+    }
+    .product-box:hover .product-thumb-img {
+      transform: scale(1.06);
+    }
+    .product-authority-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--blue-primary);
+      color: var(--blue-primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-sm);
+    }
+    .product-sku-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      font-family: var(--font-mono, monospace);
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      box-shadow: var(--shadow-sm);
+    }
+    .product-details {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .product-cat-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+    .product-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .product-spec-row {
+      background: var(--blue-soft);
+      border: 1px solid #BAE6FD;
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .product-action-row {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-add-boq {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      background: var(--blue-gradient);
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(6, 106, 171, 0.25);
+    }
+    .btn-add-boq:hover {
+      box-shadow: 0 6px 20px rgba(6, 106, 171, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-view-spec {
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-view-spec:hover {
+      background: var(--blue-soft);
+      color: var(--blue-primary);
+      border-color: var(--blue-primary);
+    }
+
+    /* Engineering Spec Table View */
+    .spec-table-container {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      box-shadow: var(--shadow-card);
+      display: none;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    .spec-table th {
+      background: #F1F5F9;
+      padding: 16px 20px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--blue-primary);
+      white-space: nowrap;
+    }
+    .spec-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+      color: var(--text-muted);
+    }
+    .spec-table tr:hover td {
+      background: var(--blue-soft);
+      color: var(--text-main);
+    }
+    .spec-table-thumb {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      background: #F8FAFC;
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Floating BOQ Dock & Tray */
+    .boq-floating-dock {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 990;
+      background: var(--navy-dark);
+      border: 1.5px solid var(--blue-primary);
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(10, 37, 64, 0.4);
+      transition: all 0.3s ease;
+    }
+    .boq-floating-dock:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(6, 106, 171, 0.35);
+    }
+    .boq-badge-counter {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--blue-primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .boq-tray-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .boq-tray-content {
+      background: #FFFFFF;
+      border: 1px solid var(--blue-primary);
+      border-radius: var(--radius-xl);
+      width: 100%;
+      max-width: 680px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: var(--shadow-elevated);
+      animation: modalSlideUp 0.3s ease;
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .boq-modal-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #F8FAFC;
+    }
+    .boq-items-list {
+      padding: 24px 28px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .boq-tray-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      gap: 16px;
+    }
+    .boq-modal-footer {
+      padding: 20px 28px;
+      border-top: 1px solid var(--border-subtle);
+      background: #F8FAFC;
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    /* QA/QC Testing Protocol Grid */
+    .qa-protocol-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s;
+    }
+    .qa-protocol-box:hover {
+      border-color: var(--blue-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(6, 106, 171, 0.12);
+    }
+
+    /* Submittal Download Card */
+    .submittal-pack-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.25s;
+    }
+    .submittal-pack-card:hover {
+      border-color: var(--blue-primary);
+      box-shadow: 0 12px 30px rgba(6, 106, 171, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar: Deep Sovereign Navy -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+97165423984"><span>📞</span> +971 (06) 542 3984</a>
+        <a href="mailto:contact@alshadouf.com"><span>✉️</span> contact@alshadouf.com</a>
+        <span>Industrial Area - 06, Sharjah, UAE</span>
+      </div>
+      <div class="top-bar-right">
+        <span>5,420+ Certified Active SKUs Held In Warehouse</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar: Crisp Pure White with Dark-Text Official Logo -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" style="display:flex; align-items:center;">
+        <img src="images/New01shadouf_logo_dark.svg" alt="Al Shadouf Group" class="nav-official-logo">
+      </a>
+
+      <div class="nav-menu" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-link active">Products <span style="font-size:0.65rem; opacity:0.6;">▼</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="products.html?cat=electrical">⚡ Electrical & Cable Systems</a>
+            <a href="products.html?cat=switchgear">⚙️ Switchgear & Enclosures</a>
+            <a href="products.html?cat=solar">☀️ Solar PV & EV Charging</a>
+            <a href="products.html?cat=plumbing">🔧 Drainage & Hydro Piping</a>
+            <a href="products.html?cat=lighting">💡 Architectural & LED Lighting</a>
+            <a href="products.html?cat=earthing">⚡ Earthing & Lightning Bars</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#quote" class="btn btn-primary btn-sm nav-cta">Instant RFQ</a>
+      </div>
+
+      <div class="hamburger" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LIVE WAREHOUSE TICKER STRIP -->
+  <div class="warehouse-ticker-strip">
+    <div class="ticker-content">
+      ⚡ SHARJAH CENTRAL YARD: 14 TONS HOT-DIP GI CONDUIT LOADED FOR BUSINESS BAY · 12,000M DUCAB 4C CABLES CLEARED FOR JAFZA MEGA-HUB · 35 ABB TERRA 22kW EV WALLBOXES IN STOCK · FURSE COPPER EARTH BARS 10-WAY READY FOR IMMEDIATE DEWA INSPECTION · 100% MILL TEST TRACEABILITY GUARANTEED ·
+    </div>
+  </div>
+
+  <!-- LIGHT THEME HERO: ENTERPRISE INVENTORY COMMAND TERMINAL -->
+  <section class="products-hero-terminal">
+    <div class="container">
+      <div class="terminal-hero-grid fade-in">
+        
+        <!-- Left: Search Console & Live Heading -->
+        <div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <span class="tech-pill">REAL-TIME LOGISTICS HUD</span>
+            <span style="font-size:0.8rem; color:var(--emerald-live); font-weight:700;">🟢 Stock Available for Same-Day Dispatch</span>
+          </div>
+
+          <h1 class="terminal-hero-title">
+            Certified MEP Material <span class="text-gradient-blue">Inventory Terminal.</span>
+          </h1>
+          <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; max-width:620px;">
+            Direct inventory access to 5,420+ pre-cleared electro-mechanical items held at our Sharjah Central Staging Yard. Search parts, verify standards, and build live bill of quantities (BOQ).
+          </p>
+
+          <!-- Integrated Live Search Input -->
+          <div class="hero-search-box">
+            <span class="hero-search-icon">🔍</span>
+            <input type="text" id="productSearchInput" class="hero-search-input" placeholder="Type material: EV Charger, GI Conduit, Cleat, Earth Bar, PVC, MK Socket, Enclosure...">
+          </div>
+
+          <!-- Quick Search Tags -->
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; font-size:0.8rem;">
+            <span style="color:var(--text-dim);">Popular Inquiries:</span>
+            <a href="javascript:void(0)" onclick="applySearchTag('EV Charger')" style="color:var(--blue-primary); text-decoration:underline; font-weight:600;">ABB EV Charger</a>
+            <a href="javascript:void(0)" onclick="applySearchTag('GI Conduit')" style="color:var(--blue-primary); text-decoration:underline; font-weight:600;">GI Conduit</a>
+            <a href="javascript:void(0)" onclick="applySearchTag('MK')" style="color:var(--blue-primary); text-decoration:underline; font-weight:600;">MK Sockets</a>
+            <a href="javascript:void(0)" onclick="applySearchTag('Earth Bar')" style="color:var(--blue-primary); text-decoration:underline; font-weight:600;">Furse Earth Bars</a>
+            <a href="javascript:void(0)" onclick="applySearchTag('Drainage')" style="color:var(--blue-primary); text-decoration:underline; font-weight:600;">PVC Underground</a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Featured Material Spotlight -->
+        <div class="spotlight-material-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span class="tech-pill">MATERIAL SPOTLIGHT OF THE DAY</span>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);">SKU: AS-EV-0201</span>
+          </div>
+
+          <div style="display:flex; gap:20px; align-items:center;">
+            <div style="width:130px; height:130px; background:#F8FAFC; border-radius:12px; border:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:center; padding:10px; flex-shrink:0;">
+              <img src="images/Terra-AC-W22-T-RD-M-0-265x265_c.jpg" alt="ABB Terra AC EV Charger" style="max-height:100%; max-width:100%; object-fit:contain;">
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--text-main); margin-bottom:6px;">ABB Terra AC 22kW Commercial Wallbox</h3>
+              <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.5; margin-bottom:10px;">
+                Type 2 RFID authenticated commercial EV station with MID meter & dynamic load balancing. Pre-approved for DEWA EV Green Charger initiative.
+              </p>
+              <div style="font-size:0.8rem; color:var(--emerald-live); font-weight:700;">
+                <span>🟢 45 Units Staged in Sharjah Yard</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; padding-top:14px; border-top:1px solid var(--border-subtle); display:flex; gap:10px;">
+            <button class="btn btn-primary btn-sm" style="flex:1; justify-content:center;" onclick="addToBOQ('AS-EV-0201', 'ABB Terra AC Wallbox 22kW Station', 'EV Infrastructure')">+ Add to BOQ Tray</button>
+            <button class="btn btn-outline btn-sm" onclick="openSpecModal('ABB Terra AC Wallbox 22kW', 'AS-EV-0201', 'IEC 61851-1 / DEWA EV Standards', 'Flame Retardant Polycarbonate (IP54 / IK10)', 'Output: 3-Phase 400V, 32A, 22kW Max', 'Connectivity: Wi-Fi, Ethernet, Bluetooth, 4G, RFID', 'DEWA EV Green Charger Approved')">Inspect Specs</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINE FILTER & VIEW ENGINE -->
+  <section class="section" style="padding-top:30px;">
+    <div class="container">
+
+      <!-- Discipline Filter Tabs -->
+      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:28px;" class="fade-in">
+        <button class="filter-btn filter-btn-tech active" data-filter="all">All Disciplines (18)</button>
+        <button class="filter-btn filter-btn-tech" data-filter="electrical">⚡ Electrical Containment</button>
+        <button class="filter-btn filter-btn-tech" data-filter="switchgear">⚙️ Switchgear & Enclosures</button>
+        <button class="filter-btn filter-btn-tech" data-filter="solar">☀️ Solar PV & EV Tech</button>
+        <button class="filter-btn filter-btn-tech" data-filter="plumbing">🔧 Drainage & Piping</button>
+        <button class="filter-btn filter-btn-tech" data-filter="lighting">💡 Architectural LED</button>
+        <button class="filter-btn filter-btn-tech" data-filter="earthing">⚡ Earthing & Grounding</button>
+      </div>
+
+      <!-- Controls & Count Bar -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:28px; padding-bottom:16px; border-bottom:1px solid var(--border-subtle);" class="fade-in">
+        <div style="font-size:0.92rem; color:var(--text-muted);">
+          Displaying <span id="visibleProductCount" style="color:var(--blue-primary); font-weight:800;">18</span> Verified Materials In Yard
+        </div>
+
+        <div style="display:flex; background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:50px; padding:4px; gap:4px; box-shadow:var(--shadow-sm);">
+          <button class="view-toggle-btn active" id="btnGridView" onclick="setCatalogView('grid')" style="padding:8px 18px; border-radius:50px; font-size:0.85rem; font-weight:700; background:var(--blue-gradient); color:#FFFFFF; border:none; cursor:pointer;">
+            <span>🔳</span> Cyber Grid View
+          </button>
+          <button class="view-toggle-btn" id="btnTableView" onclick="setCatalogView('table')" style="padding:8px 18px; border-radius:50px; font-size:0.85rem; font-weight:600; background:transparent; color:var(--text-muted); border:none; cursor:pointer;">
+            <span>📑</span> Engineering Spec Table
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW 1: PRODUCT GRID (LIGHT THEME) -->
+      <div class="product-grid-view" id="productGridContainer">
+
+        <!-- Product 1: GI Conduit -->
+        <div class="product-box fade-in" data-category="electrical" data-name="Class 4 Hot-Dip GI Conduits & Fittings" data-sku="AS-ELE-0101">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-ELE-0101</span>
+            <span class="product-authority-badge">DEWA / BS 4568</span>
+            <img src="images/GImain-265x265_c.png" alt="GI Conduit & Accessories" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Electrical Containment</span>
+              <h3 class="product-title">Class 4 Hot-Dip GI Conduits & Accessories</h3>
+              <p class="product-desc">Heavy-gauge welded galvanized steel conduits, inspection elbows, circular junction boxes, and male brass bushes.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Sizes: 20mm, 25mm, 32mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 45,000m In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-ELE-0101', 'Class 4 Hot-Dip GI Conduits (25mm)', 'Electrical Containment')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Class 4 Hot-Dip GI Conduits', 'AS-ELE-0101', 'BS EN 61386-21 / BS 4568 Class 4', 'Hot-Dip Galvanized Heavy Gauge Steel', '20mm, 25mm, 32mm (3.75m standard length)', 'Operating Temp: -45°C to +250°C', 'DEWA, SEWA, ADDC, Civil Defense approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Two-Bolt LSF Cleats -->
+        <div class="product-box fade-in" data-category="electrical" data-name="Two-Bolt LSF Polymer Cable Cleats" data-sku="AS-ELE-0102">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-ELE-0102</span>
+            <span class="product-authority-badge">IEC 61914 Certified</span>
+            <img src="images/Two-Bolt-LSF-Type-Cleat-1-265x265_c.png" alt="Two-Bolt LSF Cable Cleat" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Cable Cleats & Fixings</span>
+              <h3 class="product-title">Two-Bolt LSF Polymer Cable Cleats</h3>
+              <p class="product-desc">Low Smoke & Fume (LSF) polymeric two-bolt cleats designed to restrain high-fault single/multi-core power cables.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Cable OD: 50mm - 130mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 12,000 Pcs Ready</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-ELE-0102', 'Two-Bolt LSF Polymer Cable Cleats', 'Cable Fixings')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Two-Bolt LSF Cable Cleat', 'AS-ELE-0102', 'IEC 61914 / BS 7671', 'Low Smoke Zero Halogen UV-Stabilized Polymer', 'Cable OD Range: 50mm to 130mm', 'Peak Short Circuit Withstand: Up to 80kA', 'SEWA, DEWA, JAFZA Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Cast Aluminium Trefoil Cleats -->
+        <div class="product-box fade-in" data-category="electrical" data-name="Cast Aluminium Trefoil Cable Cleats" data-sku="AS-ELE-0103">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-ELE-0103</span>
+            <span class="product-authority-badge">110kA Fault Rated</span>
+            <img src="images/Aluminium-Trefoil-Cleat-1-265x265_c.png" alt="Aluminium Trefoil Cleat" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">High-Voltage Cleating</span>
+              <h3 class="product-title">Cast Aluminium Trefoil Cable Cleats</h3>
+              <p class="product-desc">Heavy-duty LM6 cast aluminium cleats with neoprene liners for securing single-core power cables in trefoil formation.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Trefoil OD: 24mm - 76mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-ELE-0103', 'Cast Aluminium Trefoil Cable Cleats', 'High-Voltage Cleating')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Cast Aluminium Trefoil Cleat', 'AS-ELE-0103', 'IEC 61914 / BS EN 50368', 'Cast Aluminium LM6 with Low Smoke Neoprene Cushion', 'Trefoil Formation OD: 24mm - 76mm', 'Fault Current: 110kA Peak', 'Sub-station & Power Plant Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: ABB Terra AC 22kW EV Charger -->
+        <div class="product-box fade-in" data-category="solar" data-name="ABB Terra AC Wallbox EV Charger (22kW)" data-sku="AS-EV-0201">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-EV-0201</span>
+            <span class="product-authority-badge">DEWA EV Approved</span>
+            <img src="images/Terra-AC-W22-T-RD-M-0-265x265_c.jpg" alt="ABB Terra AC EV Charger 22kW" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">EV Infrastructure / Solar</span>
+              <h3 class="product-title">ABB Terra AC Wallbox 22kW Station</h3>
+              <p class="product-desc">Commercial EV charging station featuring Type 2 socket, RFID authentication, integrated MID meter, and cloud telemetry.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">3-Phase 32A / 22kW · OCPP 1.6J</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 Stock Held in Yard</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-EV-0201', 'ABB Terra AC Wallbox 22kW Station', 'EV Infrastructure')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('ABB Terra AC Wallbox 22kW', 'AS-EV-0201', 'IEC 61851-1 / DEWA EV Standards', 'Flame Retardant Polycarbonate (IP54 / IK10)', 'Output: 3-Phase 400V, 32A, 22kW Max', 'Connectivity: Wi-Fi, Ethernet, Bluetooth, 4G, RFID', 'DEWA EV Green Charger Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: ABB Terra AC 11kW EV Charger -->
+        <div class="product-box fade-in" data-category="solar" data-name="ABB Terra AC Wallbox EV Charger (11kW)" data-sku="AS-EV-0202">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-EV-0202</span>
+            <span class="product-authority-badge">Smart Solar Ready</span>
+            <img src="images/Terra-AC-W11-G5-R-0-265x265_c.png" alt="ABB Terra AC EV Charger 11kW" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">EV Infrastructure / Residential</span>
+              <h3 class="product-title">ABB Terra AC 11kW Smart Charger</h3>
+              <p class="product-desc">Compact residential and commercial wallbox with built-in DC ground fault leakage detector and load balancing.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">3-Phase 16A / 11kW · Type 2</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 35 Units Ready</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-EV-0202', 'ABB Terra AC 11kW Charger', 'EV Infrastructure')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('ABB Terra AC 11kW', 'AS-EV-0202', 'IEC 61851-1 / EN 61000', 'IP54 / IK10 Housing', 'Output: 3-Phase 11kW', 'Protection: Overcurrent, Overvoltage, DC Leakage 6mA', 'UAE Utility Certified')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: IP66 Single-Door Metal Enclosures -->
+        <div class="product-box fade-in" data-category="switchgear" data-name="IP66 Single-Door Steel Enclosures" data-sku="AS-SWG-0301">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-SWG-0301</span>
+            <span class="product-authority-badge">IP66 / IK10 Rated</span>
+            <img src="images/Metal-Enclosures-Single-Door1-265x265_c.png" alt="Metal Enclosure Single Door" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Switchgear & Panels</span>
+              <h3 class="product-title">IP66 Single-Door Steel Enclosures</h3>
+              <p class="product-desc">RAL 7035 powder-coated sheet steel distribution enclosures with zinc-plated chassis plate and seamless PU gasket.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Sizes: 300x200 up to 1200x800mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 2,400 Units In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-SWG-0301', 'IP66 Single-Door Steel Enclosure', 'Switchgear')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('IP66 Steel Enclosure', 'AS-SWG-0301', 'IEC 62208 / EN 60529', 'Cold-Rolled Steel 1.5mm - 2.0mm thickness', 'Finish: Epoxy Polyester Powder Coat RAL 7035', 'IP Rating: IP66 / Impact: IK10', 'DEWA & SEWA Form 2/4 Compliant')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Industrial Terminal Distribution Boxes -->
+        <div class="product-box fade-in" data-category="switchgear" data-name="Heavy-Duty Terminal Distribution Boxes" data-sku="AS-SWG-0302">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-SWG-0302</span>
+            <span class="product-authority-badge">NEMA 4X / IP65</span>
+            <img src="images/TERMINAL-BOXES3-265x265_c.png" alt="Terminal Boxes" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">ELV & Marshaling</span>
+              <h3 class="product-title">Heavy-Duty Terminal Junction Boxes</h3>
+              <p class="product-desc">Multi-pole terminal connection boxes for BMS instrumentation, fire alarm loop marshaling, and ELV automation.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Configurations: 10 to 60 Terminals</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-SWG-0302', 'Heavy-Duty Terminal Junction Box', 'Switchgear')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Terminal Distribution Box', 'AS-SWG-0302', 'BS EN 60947-7-1', 'Heavy Gauge Steel with DIN-rail mount', 'Terminal Capacity: 2.5mm² to 35mm²', 'Operating Voltage: Up to 1000V AC/DC', 'Civil Defense & BMS Compliant')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: High-Conductivity Copper Earth Bars -->
+        <div class="product-box fade-in" data-category="earthing" data-name="HDHC Copper Earthing & Disconnecting Bars" data-sku="AS-EAR-0401">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-EAR-0401</span>
+            <span class="product-authority-badge">Furse Equivalent</span>
+            <img src="images/Earth-Bars-new-265x265_c.jpg" alt="Copper Earth Bars" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Earthing & Lightning Protection</span>
+              <h3 class="product-title">HDHC Copper Earth Bars with Links</h3>
+              <p class="product-desc">Pre-drilled 50x6mm hard-drawn high-conductivity copper bars mounted on reinforced polyester standoff insulators.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">6, 8, 10, 12 & 20-Way Configurations</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 3,500 Bars In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-EAR-0401', 'HDHC Copper Earth Bar (10-Way)', 'Earthing')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('HDHC Copper Earth Bar', 'AS-EAR-0401', 'BS 7430 / BS EN 13601', '99.9% High Conductivity Copper (50x6mm)', 'Base: Galvanized Steel with M10 Brass Screws', 'Disconnecting Link: Removable copper link', 'DEWA, SEWA & Furse Standard')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9: MK Logic Plus 13A Twin Sockets -->
+        <div class="product-box fade-in" data-category="electrical" data-name="MK Logic Plus 13A Twin Switched Sockets" data-sku="AS-WIR-0501">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-WIR-0501</span>
+            <span class="product-authority-badge">20-Year Guarantee</span>
+            <img src="images/K2740WHI-265x265_c.jpeg" alt="MK Switch Sockets" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Wiring Devices / Honeywell</span>
+              <h3 class="product-title">MK Logic Plus 13A Twin Sockets</h3>
+              <p class="product-desc">Genuine MK Honeywell antimicrobial 13A twin switched socket with 3-pin operated safety child shutter.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Model: K2740WHI · Antimicrobial</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 50,000 Pcs Ready</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-WIR-0501', 'MK Logic Plus 13A Twin Socket K2740WHI', 'Wiring Devices')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('MK Logic Plus 13A Socket', 'AS-WIR-0501', 'BS 1363 Pt 2: 1995', 'Thermoset Urea with Antimicrobial Properties', 'Rating: 13A 250V AC 50Hz', 'Terminal Capacity: 3 x 2.5mm² or 2 x 4mm²', 'DEWA & SEWA Residential Certified')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 10: MK 1-Way / 2-Way Light Switches -->
+        <div class="product-box fade-in" data-category="electrical" data-name="MK Logic Plus 10A 1-Gang Light Switches" data-sku="AS-WIR-0502">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-WIR-0502</span>
+            <span class="product-authority-badge">BS EN 60669-1</span>
+            <img src="images/K1060D1WHI-265x265_c.jpeg" alt="MK Light Switch" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Wiring Devices / Honeywell</span>
+              <h3 class="product-title">MK Logic Plus 1-Gang 2-Way Switches</h3>
+              <p class="product-desc">Heavy-duty 10AX wide-rocker switches engineered for fluorescent, inductive and LED lighting loads.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Model: K1060D1WHI · 10AX 250V</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-WIR-0502', 'MK Logic Plus 1-Gang Switch K1060', 'Wiring Devices')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('MK Logic Plus 1-Gang Switch', 'AS-WIR-0502', 'BS EN 60669-1: 2000', 'Antimicrobial Thermoset Urea Body', 'Rating: 10AX (Inductive / LED rating)', 'Guarantee: 20 Years Official MK Guarantee', 'UAE Utility Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 11: PVC Underground Drainage Pipes -->
+        <div class="product-box fade-in" data-category="plumbing" data-name="PVC-U Golden Brown Underground Drainage Pipes" data-sku="AS-PLM-0601">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-PLM-0601</span>
+            <span class="product-authority-badge">BS EN 1401</span>
+            <img src="images/Underground-3-265x265_c.png" alt="Underground Drainage Pipes" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Hydro & Drainage Systems</span>
+              <h3 class="product-title">PVC-U Golden Brown Drainage Pipes</h3>
+              <p class="product-desc">BS EN 1401 certified underground gravity sewer and soil drainage pipes with elastomeric rubber ring sockets.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Diameters: 110mm, 160mm & 200mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 28,000m In Yard</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-PLM-0601', 'PVC-U Underground Drainage Pipe 160mm', 'Drainage Piping')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('PVC-U Underground Pipe', 'AS-PLM-0601', 'BS EN 1401-1 / BS 4660', 'Unplasticized Polyvinyl Chloride (PVC-U)', 'Ring Stiffness: SN4 / SN8 rating', 'Lengths: 6.0 meter spigot/socket with rubber ring', 'Sharjah & Dubai Municipality Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 12: Underground Subsoil Perforated Ducting -->
+        <div class="product-box fade-in" data-category="plumbing" data-name="Heavy Perforated Subsoil Drainage Ducts" data-sku="AS-PLM-0602">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-PLM-0602</span>
+            <span class="product-authority-badge">Civil Infrastructure</span>
+            <img src="images/Underground-1-265x265_c.png" alt="Underground Ducting" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Hydro & Civil Ducting</span>
+              <h3 class="product-title">Perforated Subsoil Drainage Ducts</h3>
+              <p class="product-desc">Corrugated perforated and non-perforated subsoil drainage ducts for highway dewatering and foundation protection.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Coils: 50m / 100m Coils</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-PLM-0602', 'Perforated Subsoil Drainage Ducts', 'Drainage Piping')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Perforated Subsoil Duct', 'AS-PLM-0602', 'BS 4962 / DIN 1187', 'High-Density Polyethylene Corrugated Coil', 'Water Inflow Slot Area: >50 cm²/m', 'Crush Resistance: Heavy Duty Class', 'RTA & Infrastructure Certified')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 13: Omnia Architectural LED Downlights -->
+        <div class="product-box fade-in" data-category="lighting" data-name="Omnia Commercial Architectural LED Downlights" data-sku="AS-LGT-0701">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-LGT-0701</span>
+            <span class="product-authority-badge">CRI > 90 / UGR < 16</span>
+            <img src="images/omnia-main-265x265_c.png" alt="Omnia Lighting" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Architectural Optics</span>
+              <h3 class="product-title">Omnia Commercial Architectural Downlights</h3>
+              <p class="product-desc">Deep-recessed anti-glare COB LED downlights with interchangeable magnetic bezels engineered for hotels and executive offices.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">15W - 35W · 3000K / 4000K</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 8,500 Units Ready</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-LGT-0701', 'Omnia Architectural LED Downlight (25W)', 'Lighting')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Omnia Architectural Downlight', 'AS-LGT-0701', 'IEC 60598-1 / EN 62471', 'Die-Cast Aluminium Heatsink + Polycarbonate Optics', 'Luminous Efficacy: 110 lm/W · CRI>90', 'Driver: Tridonic DALI / Phase-cut Dimmable', 'Hospitality & Commercial Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 14: Granada Commercial LED Panels -->
+        <div class="product-box fade-in" data-category="lighting" data-name="Granada Backlit LED Commercial Ceiling Panels" data-sku="AS-LGT-0702">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-LGT-0702</span>
+            <span class="product-authority-badge">Flicker-Free Driver</span>
+            <img src="images/granada-main-265x265_c.png" alt="Granada LED Panels" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Commercial Optics</span>
+              <h3 class="product-title">Granada Backlit 600x600 LED Panels</h3>
+              <p class="product-desc">High-transmission optical PMMA diffuser ceiling panels engineered for sustained 24/7 corporate commercial environments.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">40W · 135 lm/W · 4000K</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 14,000 Panels Ready</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-LGT-0702', 'Granada Backlit 600x600 LED Panel (40W)', 'Lighting')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Granada 600x600 LED Panel', 'AS-LGT-0702', 'IEC 60598-2-2', 'Cold Rolled Steel Body + PMMA Lens (Non-yellowing)', 'Power: 40W · Output: 5,400 Lumens', 'Lifetime: L80B10 @ 50,000 Hours', 'DEWA & SEWA Commercial Certified')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 15: Alfanar 10kA Miniature Circuit Breakers -->
+        <div class="product-box fade-in" data-category="switchgear" data-name="Alfanar 10kA Miniature Circuit Breakers (MCB)" data-sku="AS-SWG-0303">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-SWG-0303</span>
+            <span class="product-authority-badge">10kA Breaking / B&C Curve</span>
+            <img src="images/ALF-NEW-MAIN-265x265_c.png" alt="Alfanar Breakers" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Circuit Protection</span>
+              <h3 class="product-title">Alfanar 10kA Miniature Circuit Breakers</h3>
+              <p class="product-desc">Din-rail mounted 1P, 2P, 3P and 4P miniature circuit breakers with bi-connect terminals and positive trip contact flag.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">6A to 63A · IEC 60898-1</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 25,000 Poles In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-SWG-0303', 'Alfanar 10kA MCB 3-Pole 32A', 'Circuit Protection')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Alfanar 10kA MCB', 'AS-SWG-0303', 'IEC 60898-1 / EN 60898-1', 'Self-extinguishing Thermoplastic Glass Fiber', 'Short Circuit Capacity: 10kA @ 230/400V AC', 'Tripping Curves: B Curve, C Curve', 'DEWA, SEWA & Civil Defense Certified')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 16: PPR Thermal Fusion Pressure Pipes -->
+        <div class="product-box fade-in" data-category="plumbing" data-name="PPR Hot & Cold Water Thermal Fusion Pipes" data-sku="AS-PLM-0603">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-PLM-0603</span>
+            <span class="product-authority-badge">PN20 Pressure Rated</span>
+            <img src="images/main-2-265x265_c.png" alt="PPR Water Pipes" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Hydro & Potable Water</span>
+              <h3 class="product-title">PPR Type-3 Thermal Fusion Pressure Pipes</h3>
+              <p class="product-desc">Random copolymer Polypropylene pipes for high-temperature potable water distribution and chilled water coils.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Diameters: 20mm up to 110mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 18,000m In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-PLM-0603', 'PPR Fusion Pipe 32mm PN20', 'Plumbing')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('PPR Thermal Fusion Pipe', 'AS-PLM-0603', 'DIN 8077 / DIN 8078 / ISO 15874', 'Polypropylene Random Copolymer (PP-R Type 3)', 'Pressure Rating: PN 20 (20 Bar)', 'Working Temperature: Up to 95°C', 'WRAS & UAE Municipality Certified')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 17: Galvanized Unistrut Channels & Clamps -->
+        <div class="product-box fade-in" data-category="electrical" data-name="Galvanized Unistrut Channels & Pipe Clamps" data-sku="AS-SUP-0801">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-SUP-0801</span>
+            <span class="product-authority-badge">BS 6946 Standard</span>
+            <img src="images/main-265x265_c.png" alt="Strut Support Systems" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Secondary Steel Supports</span>
+              <h3 class="product-title">Hot-Dip Galvanized Unistrut Channels</h3>
+              <p class="product-desc">41x41mm and 41x21mm slotted channel framing with channel nuts, rubber-lined split clamps, and cantilever arms.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Gauges: 1.5mm, 2.0mm & 2.5mm</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 16,000 Lengths</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-SUP-0801', 'Unistrut Channel 41x41 HDG (3m)', 'Secondary Support')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Galvanized Strut Channels', 'AS-SUP-0801', 'BS 6946 / BS EN ISO 1461', 'Hot-Dip Galvanized Structural Steel (HDG 55µm)', 'Dimensions: 41x41mm & 41x21mm Slotted Profile', 'Loading: Verified Safe Load Data Sheet', 'MEP Trapeze Hanger Standard')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 18: Heavy Anchor Bolts & Fixings -->
+        <div class="product-box fade-in" data-category="electrical" data-name="High-Tensile Through-Bolts & Concrete Anchors" data-sku="AS-SUP-0802">
+          <div class="product-thumb-container">
+            <span class="product-sku-badge">AS-SUP-0802</span>
+            <span class="product-authority-badge">ETA Option 1 Seismic</span>
+            <img src="images/SCREWS-265x265_c.jpeg" alt="Anchor Bolts & Fixings" class="product-thumb-img">
+          </div>
+          <div class="product-details">
+            <div>
+              <span class="product-cat-pill">Fixings & Fasteners</span>
+              <h3 class="product-title">High-Tensile Concrete Through-Bolts</h3>
+              <p class="product-desc">Zinc-plated and stainless steel wedge anchors, drop-in anchors, and threaded rods for overhead cable tray suspension.</p>
+              <div class="product-spec-row">
+                <span style="color:var(--text-dim);">Sizes: M6 to M24 · Grade 8.8</span>
+                <span style="color:var(--emerald-live); font-weight:700;">🟢 Bulk Kegs In Stock</span>
+              </div>
+            </div>
+            <div class="product-action-row">
+              <button class="btn-add-boq" onclick="addToBOQ('AS-SUP-0802', 'High-Tensile Through-Bolt M12x100mm', 'Fixings')">+ Add to BOQ</button>
+              <button class="btn-view-spec" onclick="openSpecModal('Concrete Through-Bolts', 'AS-SUP-0802', 'ETA-01/0014 / DIN 975', 'Cold-Formed High Tensile Steel (Zinc Plated 5µm)', 'Thread Diameters: M8, M10, M12, M16', 'Pullout Resistance: Certified Concrete Tension', 'Civil Defense Approved')">Specs</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VIEW 2: ENGINEERING SPEC TABLE VIEW -->
+      <div class="spec-table-container" id="productTableContainer">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Part SKU</th>
+              <th>Thumbnail</th>
+              <th>Material Description</th>
+              <th>Engineering Standard</th>
+              <th>Approved Authorities</th>
+              <th>Inventory Status</th>
+              <th>BOQ Action</th>
+            </tr>
+          </thead>
+          <tbody id="specTableBody">
+            <!-- Populated dynamically via JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MATERIAL QA/QC & TESTING STANDARDS (LIGHT THEME) -->
+  <section class="section-sm" style="background:#F1F5F9; border-top:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Rigorous Technical Verification</div>
+        <h2>Material QA/QC & Laboratory Testing Standards</h2>
+        <p style="color:var(--text-muted); max-width:680px; margin:0 auto;">Every batch held in Al Shadouf's Central Yard undergoes stringent physical and metallurgical testing before site dispatch.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;" class="fade-in">
+        <div class="qa-protocol-box">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🔬</div>
+          <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--text-main);">Galvanizing Thickness</h4>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            Magnetic gauge verification ensuring minimum 55µm hot-dip zinc coating adhering to BS EN ISO 1461.
+          </p>
+        </div>
+
+        <div class="qa-protocol-box">
+          <div style="font-size:1.8rem; margin-bottom:10px;">⚡</div>
+          <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--text-main);">Copper Conductivity</h4>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            100% IACS conductivity testing for HDHC earthing bars (BS EN 13601) guaranteeing zero earth resistance hot spots.
+          </p>
+        </div>
+
+        <div class="qa-protocol-box">
+          <div style="font-size:1.8rem; margin-bottom:10px;">💥</div>
+          <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--text-main);">Short-Circuit Rigidity</h4>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            Mechanical dynamic stress verification under IEC 61914 with fault withstand capabilities up to 110kA.
+          </p>
+        </div>
+
+        <div class="qa-protocol-box">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🔥</div>
+          <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--text-main);">LSF Fire Safety</h4>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            Low smoke halogen-free emission testing (BS EN 60754) certified for underground tunnels and commercial towers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADABLE PRE-PREPARED SUBMITTAL PACKS (LIGHT THEME) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Consultant Expediting</div>
+        <h2>Pre-Prepared Authority Submittal Dossiers</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">Ready-to-submit compliance documents formatted to DEWA, SEWA, ADDC and Civil Defense specifications.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;" class="fade-in">
+        <div class="submittal-pack-card">
+          <div>
+            <span class="tech-pill" style="margin-bottom:8px;">DEWA APPROVED</span>
+            <h4 style="font-size:1.1rem; color:var(--text-main); margin-bottom:6px;">Electrical Containment Submittal</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.5;">Complete compliance sheet for Class 4 GI conduits, GI trunking, and fittings.</p>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="openUniversalRFQ('DEWA Electrical Containment Dossier')">Request PDF →</button>
+        </div>
+
+        <div class="submittal-pack-card">
+          <div>
+            <span class="tech-pill" style="margin-bottom:8px;">SEWA CERTIFIED</span>
+            <h4 style="font-size:1.1rem; color:var(--text-main); margin-bottom:6px;">Switchgear & MCB Dossier</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.5;">Type-test certificates, breaking capacities, and IP66 enclosure ratings.</p>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="openUniversalRFQ('SEWA Switchgear & MCB Dossier')">Request PDF →</button>
+        </div>
+
+        <div class="submittal-pack-card">
+          <div>
+            <span class="tech-pill" style="margin-bottom:8px;">CIVIL DEFENSE</span>
+            <h4 style="font-size:1.1rem; color:var(--text-main); margin-bottom:6px;">Earthing & Lightning Package</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.5;">HDHC copper test certificates, disconnecting link specs, and earth pit submittals.</p>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="openUniversalRFQ('Civil Defense Earthing Dossier')">Request PDF →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authorized Tier-1 Partner Ribbon (Clean Light Grid) -->
+  <section class="section-sm" style="background:#F1F5F9; border-top:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Authorized Global Distribution</div>
+        <h2>Direct Manufacturer Alliances</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:16px;" class="fade-in">
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/Ducab.jpg" alt="Ducab Cables" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/3M-LOGO.jpg" alt="3M Electrical" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/panasonic-logo.jpg" alt="Panasonic" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/MK-HONEY-WELL.png" alt="MK Honeywell" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/REXTON-1.jpg" alt="Rexton" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/furse.jpg" alt="Furse Earthing" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/MAKITA.png" alt="Makita Tools" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/VETO.jpg" alt="Veto" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/Vortice68.png" alt="Vortice Ventilation" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/GMSA.png" alt="GMSA" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <img src="images/KHALEEGIA.png" alt="Khaleegia" style="max-height:48px; max-width:120px; object-fit:contain;">
+        </div>
+        <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; display:flex; align-items:center; justify-content:center; min-height:80px; box-shadow:var(--shadow-sm);">
+          <span style="font-family:var(--font-display); font-weight:800; font-size:1.05rem; color:var(--navy-dark);">SCHNEIDER</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING PERSISTENT BOQ TRAY DOCK -->
+  <div class="boq-floating-dock" id="boqDock" onclick="toggleBOQTrayModal(true)">
+    <div style="font-size:1.3rem;">📋</div>
+    <div>
+      <div style="font-family:var(--font-heading); font-size:0.88rem; font-weight:700; color:#FFFFFF; line-height:1.2;">Project BOQ Tray</div>
+      <div style="font-size:0.75rem; color:#BAE6FD;" id="boqDockSubtitle">0 Materials Staged</div>
+    </div>
+    <div class="boq-badge-counter" id="boqBadge">0</div>
+  </div>
+
+  <!-- BOQ SLIDE-UP MODAL TRAY (LIGHT THEME) -->
+  <div class="boq-tray-modal" id="boqTrayModal">
+    <div class="boq-tray-content">
+      <div class="boq-modal-header">
+        <div>
+          <h3 style="font-size:1.2rem; font-weight:800; color:var(--blue-primary); margin-bottom:2px;">Live Project Material Tray (BOQ)</h3>
+          <p style="font-size:0.82rem; color:var(--text-dim); margin:0;">Staged materials ready for formal pricing & contractor estimation</p>
+        </div>
+        <button onclick="toggleBOQTrayModal(false)" style="background:none; border:none; color:var(--text-muted); font-size:1.6rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <div class="boq-items-list" id="boqList">
+        <div id="boqEmptyMessage" style="text-align:center; padding:40px 20px; color:var(--text-dim);">
+          <div style="font-size:2.5rem; margin-bottom:12px;">📑</div>
+          <div style="font-weight:700; font-size:1rem; color:var(--text-main); margin-bottom:6px;">Your BOQ Tray Is Empty</div>
+          <div>Click "+ Add to BOQ" on any product card or spec table row to build your bill of quantities.</div>
+        </div>
+      </div>
+
+      <div class="boq-modal-footer">
+        <button class="btn btn-outline btn-sm" onclick="clearBOQ()">Clear All</button>
+        <button class="btn btn-primary btn-sm" onclick="exportBOQToWhatsApp()">📱 Send to WhatsApp Desk</button>
+        <button class="btn btn-primary btn-sm" onclick="submitBOQToRFQModal()">Formal Tender RFQ →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK TECHNICAL DATASHEET MODAL (LIGHT THEME) -->
+  <div class="spec-modal" id="specModal" style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.6); backdrop-filter:blur(8px); z-index:1050; display:none; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#FFFFFF; border:1px solid var(--blue-primary); border-radius:16px; max-width:620px; width:100%; padding:32px; box-shadow:var(--shadow-elevated);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+        <div>
+          <span class="tech-pill" id="modalSpecSku" style="margin-bottom:8px;">AS-SPEC</span>
+          <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-main); margin-top:4px;" id="modalSpecTitle">Technical Specification Sheet</h3>
+        </div>
+        <button onclick="closeSpecModal()" style="background:none; border:none; color:var(--text-muted); font-size:1.6rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <table style="width:100%; border-collapse:collapse; margin:20px 0; font-size:0.88rem;">
+        <tbody>
+          <tr><td style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); font-weight:700; color:var(--text-dim); width:40%;">Standard / Code:</td><td id="modalSpecStandard" style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); color:var(--text-main); font-weight:600;">BS EN 61386</td></tr>
+          <tr><td style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); font-weight:700; color:var(--text-dim);">Material Grade:</td><td id="modalSpecMaterial" style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); color:var(--text-main);">Galvanized Steel</td></tr>
+          <tr><td style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); font-weight:700; color:var(--text-dim);">Available Sizes:</td><td id="modalSpecSizes" style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); color:var(--text-main);">20mm, 25mm, 32mm</td></tr>
+          <tr><td style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); font-weight:700; color:var(--text-dim);">Thermal / Impact:</td><td id="modalSpecThermal" style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); color:var(--text-main);">-25°C to +150°C</td></tr>
+          <tr><td style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); font-weight:700; color:var(--text-dim);">Approvals:</td><td id="modalSpecApprovals" style="padding:10px 14px; border-bottom:1px solid var(--border-subtle); color:var(--blue-primary); font-weight:700;">DEWA / SEWA / ADDC</td></tr>
+        </tbody>
+      </table>
+
+      <div style="display:flex; gap:12px; justify-content:flex-end; margin-top:20px;">
+        <button class="btn btn-outline btn-sm" onclick="closeSpecModal()">Close</button>
+        <button class="btn btn-primary btn-sm" id="modalAddBOQBtn">+ Add Item to BOQ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="toastNotice" style="position:fixed; top:90px; right:28px; background:#FFFFFF; border:1.5px solid var(--blue-primary); border-radius:8px; padding:14px 20px; color:var(--text-main); font-size:0.9rem; font-weight:600; z-index:2000; display:flex; align-items:center; gap:12px; opacity:0; transform:translateY(-20px); transition:all 0.3s ease; pointer-events:none; box-shadow:var(--shadow-elevated);">
+    <span style="color:var(--emerald-live); font-size:1.2rem;">✓</span>
+    <span id="toastMsg">Product added to BOQ Tray!</span>
+  </div>
+
+  <!-- Universal RFQ Modal (Light Theme) -->
+  <div class="rfq-modal-overlay" id="rfqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.6); backdrop-filter:blur(8px); z-index:9999; align-items:center; justify-content:center;">
+    <div class="rfq-modal-card" style="background:#FFFFFF; border:1px solid var(--blue-primary); border-radius:16px; padding:36px; max-width:540px; width:92%; position:relative; box-shadow:var(--shadow-elevated);">
+      <button onclick="document.getElementById('rfqModal').style.display='none'" style="position:absolute; top:18px; right:20px; background:none; border:none; color:var(--text-dim); font-size:1.5rem; cursor:pointer;">&times;</button>
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--blue-primary); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; font-weight:700;">ENGINEERING ESTIMATION DESK</div>
+      <h3 style="font-size:1.5rem; margin-bottom:12px; color:var(--text-main);">Request Instant Project Quote</h3>
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:20px;">Direct pricing within 4 hours. Verified mill test certificates included.</p>
+      <form id="rfqForm" onsubmit="handleUniversalRFQ(event)">
+        <div style="margin-bottom:14px;">
+          <input type="text" name="name" required placeholder="Full Name / Engineer Name" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="margin-bottom:14px;">
+          <input type="text" name="company" required placeholder="Company / Contractor (e.g., MEP Contracting LLC)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+          <input type="tel" name="phone" required placeholder="Phone / WhatsApp (+971)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+          <input type="email" name="email" required placeholder="Corporate Email" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="margin-bottom:18px;">
+          <textarea name="boq" id="rfqBOQInput" rows="4" placeholder="Paste BOQ items, cable sizes, quantities, or project details..." style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem; resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">🚀 Dispatch To Al Shadouf Estimators</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer: Authoritative Deep Navy with Original White-Text Logo -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; margin-bottom:16px;">
+            <img src="images/New01shadouf_logo02.svg" alt="Al Shadouf Group" class="nav-official-logo">
+          </div>
+          <p style="font-size:0.9rem; color:#94A3B8; line-height:1.7;">
+            Sovereign MEP infrastructure trading group headquartered in Sharjah, UAE. Direct authorized distributor for Ducab, 3M, MK Honeywell, Furse, and Schneider Electric.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Catalog Disciplines</h4>
+          <a href="products.html?cat=electrical">Electrical Containment</a>
+          <a href="products.html?cat=switchgear">Switchgear & Enclosures</a>
+          <a href="products.html?cat=solar">Solar PV & EV Charging</a>
+          <a href="products.html?cat=plumbing">HDPE & Drainage Ducts</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Desk</h4>
+          <a href="tel:+97165423984">+971 (06) 542 3984</a>
+          <a href="mailto:contact@alshadouf.com">contact@alshadouf.com</a>
+          <a href="#">Industrial Area 6, Sharjah, UAE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Al Shadouf Group. All Rights Reserved.</div>
+        <div>ISO 9001:2015 · DEWA & SEWA Compliant · Mill Test Traceable</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    let currentBOQ = JSON.parse(localStorage.getItem('alshadouf_boq') || '[]');
+
+    function updateBOQUI() {
+      const badge = document.getElementById('boqBadge');
+      const subtitle = document.getElementById('boqDockSubtitle');
+      const list = document.getElementById('boqList');
+      const emptyMsg = document.getElementById('boqEmptyMessage');
+
+      const count = currentBOQ.reduce((acc, item) => acc + item.qty, 0);
+      badge.textContent = count;
+      subtitle.textContent = `${count} Materials Staged`;
+
+      if (currentBOQ.length === 0) {
+        if (emptyMsg) emptyMsg.style.display = 'block';
+        list.innerHTML = '';
+        if (emptyMsg) list.appendChild(emptyMsg);
+      } else {
+        list.innerHTML = '';
+        currentBOQ.forEach((item, index) => {
+          const row = document.createElement('div');
+          row.className = 'boq-tray-item';
+          row.innerHTML = `
+            <div>
+              <div style="font-weight:700; color:var(--text-main); font-size:0.92rem;">${item.name}</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">${item.sku} · ${item.discipline}</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <button onclick="changeBOQQty(${index}, -1)" style="width:26px; height:26px; border-radius:4px; border:1px solid var(--border-subtle); background:#FFFFFF; color:var(--text-main); cursor:pointer;">-</button>
+              <span style="font-weight:700; font-size:0.9rem; min-width:20px; text-align:center;">${item.qty}</span>
+              <button onclick="changeBOQQty(${index}, 1)" style="width:26px; height:26px; border-radius:4px; border:1px solid var(--border-subtle); background:#FFFFFF; color:var(--text-main); cursor:pointer;">+</button>
+              <button onclick="removeBOQItem(${index})" style="background:none; border:none; color:#EF4444; font-size:1.1rem; cursor:pointer; margin-left:8px;" title="Remove">&times;</button>
+            </div>
+          `;
+          list.appendChild(row);
+        });
+      }
+      localStorage.setItem('alshadouf_boq', JSON.stringify(currentBOQ));
+    }
+
+    function addToBOQ(sku, name, discipline) {
+      const existing = currentBOQ.find(i => i.sku === sku);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        currentBOQ.push({ sku, name, discipline, qty: 1 });
+      }
+      updateBOQUI();
+      showToast(`Added "${name}" to your BOQ Tray!`);
+    }
+
+    function changeBOQQty(index, delta) {
+      if (currentBOQ[index]) {
+        currentBOQ[index].qty += delta;
+        if (currentBOQ[index].qty <= 0) {
+          currentBOQ.splice(index, 1);
+        }
+        updateBOQUI();
+      }
+    }
+
+    function removeBOQItem(index) {
+      currentBOQ.splice(index, 1);
+      updateBOQUI();
+    }
+
+    function clearBOQ() {
+      currentBOQ = [];
+      updateBOQUI();
+      showToast("Cleared BOQ Tray.");
+    }
+
+    function toggleBOQTrayModal(show) {
+      document.getElementById('boqTrayModal').style.display = show ? 'flex' : 'none';
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotice');
+      const text = document.getElementById('toastMsg');
+      text.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0)';
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-20px)';
+      }, 2800);
+    }
+
+    function exportBOQToWhatsApp() {
+      if (currentBOQ.length === 0) {
+        alert("Your BOQ Tray is empty. Please add items before exporting.");
+        return;
+      }
+      let message = "Hello Al Shadouf Estimators, I would like to request an official quotation for the following BOQ materials:%0A%0A";
+      currentBOQ.forEach((item, i) => {
+        message += `${i+1}. [${item.sku}] ${item.name} - Qty: ${item.qty}%0A`;
+      });
+      message += "%0APlease provide delivery time and official MTC confirmation to Sharjah / UAE.";
+      window.open(`https://wa.me/97165423984?text=${message}`, '_blank');
+    }
+
+    function submitBOQToRFQModal() {
+      toggleBOQTrayModal(false);
+      let summary = "Requested BOQ Items:\n";
+      currentBOQ.forEach((item, i) => {
+        summary += `${i+1}. [${item.sku}] ${item.name} (Qty: ${item.qty})\n`;
+      });
+      const boqField = document.getElementById('rfqBOQInput');
+      if (boqField) boqField.value = summary;
+      document.getElementById('rfqModal').style.display = 'flex';
+    }
+
+    function applySearchTag(tag) {
+      const search = document.getElementById('productSearchInput');
+      search.value = tag;
+      search.dispatchEvent(new Event('input'));
+    }
+
+    let activeModalItem = null;
+    function openSpecModal(title, sku, standard, material, sizes, thermal, approvals) {
+      document.getElementById('modalSpecTitle').textContent = title;
+      document.getElementById('modalSpecSku').textContent = sku;
+      document.getElementById('modalSpecStandard').textContent = standard;
+      document.getElementById('modalSpecMaterial').textContent = material;
+      document.getElementById('modalSpecSizes').textContent = sizes;
+      document.getElementById('modalSpecThermal').textContent = thermal;
+      document.getElementById('modalSpecApprovals').textContent = approvals;
+      
+      activeModalItem = { sku, title, discipline: 'Certified MEP' };
+      document.getElementById('modalAddBOQBtn').onclick = function() {
+        addToBOQ(activeModalItem.sku, activeModalItem.title, activeModalItem.discipline);
+        closeSpecModal();
+      };
+
+      document.getElementById('specModal').style.display = 'flex';
+    }
+
+    function closeSpecModal() {
+      document.getElementById('specModal').style.display = 'none';
+    }
+
+    function setCatalogView(mode) {
+      const grid = document.getElementById('productGridContainer');
+      const table = document.getElementById('productTableContainer');
+      const btnGrid = document.getElementById('btnGridView');
+      const btnTable = document.getElementById('btnTableView');
+
+      if (mode === 'table') {
+        grid.style.display = 'none';
+        table.style.display = 'block';
+        btnGrid.style.background = 'transparent';
+        btnGrid.style.color = 'var(--text-muted)';
+        btnTable.style.background = 'var(--blue-gradient)';
+        btnTable.style.color = '#FFFFFF';
+        buildSpecTable();
+      } else {
+        grid.style.display = 'grid';
+        table.style.display = 'none';
+        btnTable.style.background = 'transparent';
+        btnTable.style.color = 'var(--text-muted)';
+        btnGrid.style.background = 'var(--blue-gradient)';
+        btnGrid.style.color = '#FFFFFF';
+      }
+    }
+
+    function buildSpecTable() {
+      const tbody = document.getElementById('specTableBody');
+      const cards = document.querySelectorAll('.product-box');
+      tbody.innerHTML = '';
+
+      cards.forEach(card => {
+        if (card.style.display === 'none') return;
+        const sku = card.getAttribute('data-sku') || 'AS-SKU';
+        const name = card.getAttribute('data-name') || '';
+        const img = card.querySelector('.product-thumb-img').getAttribute('src');
+        const auth = card.querySelector('.product-authority-badge').textContent;
+        const cat = card.querySelector('.product-cat-pill').textContent;
+        const status = card.querySelector('.product-spec-row span:last-child').textContent;
+        const sizes = card.querySelector('.product-spec-row span:first-child').textContent;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><code style="color:var(--blue-primary); font-weight:700;">${sku}</code></td>
+          <td><img src="${img}" alt="${name}" class="spec-table-thumb"></td>
+          <td>
+            <div style="font-weight:700; color:var(--text-main);">${name}</div>
+            <div style="font-size:0.78rem; color:var(--text-dim);">${cat} · ${sizes}</div>
+          </td>
+          <td><span style="font-size:0.82rem; color:var(--blue-primary); font-weight:600;">${auth}</span></td>
+          <td><span style="font-size:0.8rem; background:var(--blue-soft); color:var(--blue-primary); padding:3px 8px; border-radius:4px; font-weight:700;">DEWA / SEWA / ADDC</span></td>
+          <td><span style="font-size:0.82rem;">${status}</span></td>
+          <td>
+            <button class="btn-add-boq" style="padding:6px 12px; font-size:0.78rem;" onclick="addToBOQ('${sku}', '${name.replace(/'/g, "\\'")}', '${cat}')">+ BOQ</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateBOQUI();
+
+      const searchInput = document.getElementById('productSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          setTimeout(() => {
+            const visible = document.querySelectorAll('.product-box:not([style*="display: none"])').length;
+            document.getElementById('visibleProductCount').textContent = visible;
+            if (document.getElementById('productTableContainer').style.display === 'block') {
+              buildSpecTable();
+            }
+          }, 100);
+        });
+      }
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setTimeout(() => {
+            const visible = document.querySelectorAll('.product-box:not([style*="display: none"])').length;
+            document.getElementById('visibleProductCount').textContent = visible;
+            if (document.getElementById('productTableContainer').style.display === 'block') {
+              buildSpecTable();
+            }
+          }, 100);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

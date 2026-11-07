@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Al Shadouf Group MEP Engineering Services: Single-line diagram sizing, switchgear FAT testing, commercial solar PV feasibility, and 24/7 site emergency logistics in UAE.">
+  <title>MEP Systems Engineering & Technical Field Operations | Al Shadouf Group — UAE</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* TOTALLY UNIQUE SERVICES PAGE OPENING: CAD BLUEPRINT STUDIO */
+    .services-blueprint-hero {
+      padding-top: 100px;
+      padding-bottom: 50px;
+      position: relative;
+      background: radial-gradient(circle at 10% 20%, rgba(6, 106, 171, 0.05), transparent 50%),
+                  radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.04), transparent 50%),
+                  #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .cad-titleblock-bar {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.76rem;
+      color: var(--navy);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+    .services-hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .services-hero-grid { grid-template-columns: 1fr; }
+    }
+    .services-hero-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .diagnostic-radar-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(6, 106, 171, 0.08);
+    }
+    .radar-node-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+    }
+
+    /* 5-Phase Interactive Blueprint */
+    .blueprint-explorer-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+    .blueprint-tabs-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .blueprint-tab-btn {
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .blueprint-tab-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--royal-blue);
+      color: var(--navy);
+      transform: translateX(4px);
+    }
+    .blueprint-tab-btn.active {
+      background: #EFF6FF;
+      border-color: var(--royal-blue);
+      color: var(--royal-blue);
+      box-shadow: 0 4px 16px rgba(6, 106, 171, 0.1);
+    }
+    .blueprint-tab-btn .tab-step-num {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--royal-blue);
+    }
+    .blueprint-display-canvas {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .blueprint-display-canvas::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--royal-blue), var(--sky-blue));
+    }
+    .schematic-wireframe-box {
+      background: #FFFFFF;
+      border: 1px dashed rgba(6, 106, 171, 0.35);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 20px 0;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.82rem;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* Retrofit Calculator Card */
+    .retrofit-calc-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .retrofit-calc-card { grid-template-columns: 1fr; }
+    }
+    .calc-slider-group {
+      margin-bottom: 24px;
+    }
+    .calc-slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .calc-slider-val {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--royal-blue);
+      font-size: 1.15rem;
+    }
+    .calc-slider-input {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #E2E8F0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    .calc-slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--royal-blue);
+      box-shadow: 0 0 12px rgba(6, 106, 171, 0.4);
+      cursor: pointer;
+    }
+    .calc-metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .calc-result-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+    .calc-result-val {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--royal-blue);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .calc-result-label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Testing Protocols Grid */
+    .testing-protocol-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .testing-protocol-card:hover {
+      border-color: var(--royal-blue);
+      box-shadow: 0 12px 30px rgba(6, 106, 171, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* SLA Comparison Table */
+    .sla-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+    }
+    .sla-table th {
+      padding: 18px 24px;
+      background: #F1F5F9;
+      color: var(--navy);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--border-subtle);
+    }
+    .sla-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+      background: #FFFFFF;
+      color: var(--text-main);
+    }
+    .sla-table tr:hover td {
+      background: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+97165423984"><span style="color:var(--gold);">📞</span> +971 (06) 542 3984</a>
+        <a href="mailto:contact@alshadouf.com"><span style="color:var(--cyan);">✉️</span> contact@alshadouf.com</a>
+        <span>Industrial Area - 06, Sharjah, UAE</span>
+      </div>
+      <div class="top-bar-right">
+        <span>Turnkey Engineering Support · Sub-4-Hour SLA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar: Standalone Exact Official Logo -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" style="display:flex; align-items:center;">
+        <img src="images/New01shadouf_logo_dark.svg" alt="Al Shadouf Group" class="nav-official-logo">
+      </a>
+
+      <div class="nav-menu" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-link">Products <span style="font-size:0.65rem; opacity:0.6;">▼</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="products.html?cat=electrical">⚡ Electrical & Cable Systems</a>
+            <a href="products.html?cat=switchgear">⚙️ Switchgear & Enclosures</a>
+            <a href="products.html?cat=solar">☀️ Solar PV & EV Charging</a>
+            <a href="products.html?cat=plumbing">🔧 Drainage & Hydro Piping</a>
+            <a href="products.html?cat=lighting">💡 Architectural & LED Lighting</a>
+            <a href="products.html?cat=earthing">⚡ Earthing & Lightning Bars</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#quote" class="btn btn-primary btn-sm nav-cta">Instant RFQ</a>
+      </div>
+
+      <div class="hamburger" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TOTALLY UNIQUE HERO: CAD BLUEPRINT STUDIO -->
+  <section class="services-blueprint-hero">
+    <div class="container">
+      
+      <!-- CAD Titleblock Bar -->
+      <div class="cad-titleblock-bar fade-in">
+        <div>DWG NO: AS-MEP-ENG-2026-REV3</div>
+        <div>DISCIPLINE: TURNKEY FIELD ENGINEERING & SIZING</div>
+        <div>UTILITIES: DEWA / SEWA / ADDC COMPLIANT</div>
+        <div>STATUS: 🟢 ACTIVE DEPLOYMENT</div>
+      </div>
+
+      <div class="services-hero-grid fade-in">
+        
+        <!-- Left Hero Content -->
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="tech-pill" style="border-color:var(--cyan); color:var(--cyan);">FIELD OPERATIONS BENCH</span>
+            <span style="font-size:0.8rem; color:var(--text-dim);">Nationwide UAE Coverage</span>
+          </div>
+
+          <h1 class="services-hero-title">
+            Precision Systems Engineering & <span class="text-gradient">Turnkey Operations.</span>
+          </h1>
+
+          <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin-bottom:24px;">
+            We operate beyond standard warehousing: our licensed MEP electrical and piping engineers calculate single-line diagrams, execute Form 4 factory acceptance tests (FAT), engineer Shams Dubai solar arrays, and dispatch crane-mounted fleets 24/7.
+          </p>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="#blueprint" class="btn btn-primary btn-sm">Explore 5-Phase Blueprint ⚙️</a>
+            <a href="#retrofit" class="btn btn-outline btn-sm">Calculate Solar Retrofit ROI →</a>
+          </div>
+        </div>
+
+        <!-- Right Diagnostic Radar Console -->
+        <div class="diagnostic-radar-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">SYSTEM DIAGNOSTIC TELEMETRY</span>
+            <span style="font-size:0.72rem; color:var(--emerald-live); font-weight:700;">🟢 5/5 SYSTEMS ONLINE</span>
+          </div>
+
+          <div class="radar-node-item">
+            <div>
+              <div style="font-weight:700; color:var(--text-main);">01. Electrical Sizing & SLD</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">Voltage drop, kA fault current, containment</div>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--emerald-live);">ONLINE</span>
+          </div>
+
+          <div class="radar-node-item">
+            <div>
+              <div style="font-weight:700; color:var(--text-main);">02. Central Yard Staging Hub</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">Overhead gantry crane, barcode staging</div>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--emerald-live);">LOADING</span>
+          </div>
+
+          <div class="radar-node-item">
+            <div>
+              <div style="font-weight:700; color:var(--text-main);">03. Solar PV & EV Infrastructure</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">Shams Dubai grid-tie & ABB Terra wallboxes</div>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--cyan);">CERTIFIED</span>
+          </div>
+
+          <div class="radar-node-item">
+            <div>
+              <div style="font-weight:700; color:var(--text-main);">04. Switchgear FAT Testing Lab</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">Form 4B primary injection & relay timing</div>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--gold);">TESTING</span>
+          </div>
+
+          <div class="radar-node-item" style="margin-bottom:0;">
+            <div>
+              <div style="font-weight:700; color:var(--text-main);">05. 24/7 Site Emergency Response</div>
+              <div style="font-size:0.75rem; color:var(--text-dim);">Sub-4-Hour urgent parts delivery</div>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--emerald-live);">STANDBY</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: 5-PHASE INTERACTIVE BLUEPRINT EXPLORER -->
+  <section class="section" id="blueprint" style="padding-top:40px;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Operational Methodology</div>
+        <h2>Enterprise Systems Engineering Blueprint</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">Click through our 5 core operational phases to inspect technical deliverables, standards compliance, and SLA guarantees.</p>
+      </div>
+
+      <div class="blueprint-explorer-card fade-in">
+        <div style="display:grid; grid-template-columns:1fr 1.6fr; gap:32px;">
+          
+          <!-- Left Navigation Tabs -->
+          <div class="blueprint-tabs-nav">
+            <button class="blueprint-tab-btn active" onclick="switchBlueprintTab(0)">
+              <span class="tab-step-num">01</span>
+              <div>
+                <div style="font-weight:700; font-size:1rem;">Engineering Sizing & SLD</div>
+                <div style="font-size:0.78rem; opacity:0.8;">Cable sizing, voltage drop, containment sizing</div>
+              </div>
+            </button>
+
+            <button class="blueprint-tab-btn" onclick="switchBlueprintTab(1)">
+              <span class="tab-step-num">02</span>
+              <div>
+                <div style="font-weight:700; font-size:1rem;">Central Yard Staging & JIT</div>
+                <div style="font-size:0.78rem; opacity:0.8;">Overhead gantry crane loading, phase dispatch</div>
+              </div>
+            </button>
+
+            <button class="blueprint-tab-btn" onclick="switchBlueprintTab(2)">
+              <span class="tab-step-num">03</span>
+              <div>
+                <div style="font-weight:700; font-size:1rem;">Solar PV & EV Infrastructure</div>
+                <div style="font-size:0.78rem; opacity:0.8;">DEWA Shams grid tie, ABB Terra fast chargers</div>
+              </div>
+            </button>
+
+            <button class="blueprint-tab-btn" onclick="switchBlueprintTab(3)">
+              <span class="tab-step-num">04</span>
+              <div>
+                <div style="font-weight:700; font-size:1rem;">Switchgear FAT Testing</div>
+                <div style="font-size:0.78rem; opacity:0.8;">Form 4 panels, primary injection, relay timing</div>
+              </div>
+            </button>
+
+            <button class="blueprint-tab-btn" onclick="switchBlueprintTab(4)">
+              <span class="tab-step-num">05</span>
+              <div>
+                <div style="font-weight:700; font-size:1rem;">24/7 Rapid Emergency Supply</div>
+                <div style="font-size:0.78rem; opacity:0.8;">Sub-4-Hour critical shutdown parts dispatch</div>
+              </div>
+            </button>
+          </div>
+
+          <!-- Right Interactive Blueprint Display Canvas -->
+          <div class="blueprint-display-canvas" id="blueprintCanvas">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="tech-pill" id="bpPill" style="border-color:rgba(6,106,171,0.3); color:var(--royal-blue);">DISCIPLINE: ELECTRICAL SIZING</span>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);" id="bpStandard">CODE: IEC 60364 / BS 7671</span>
+              </div>
+              <h3 style="font-size:1.6rem; margin:14px 0 8px; color:var(--navy);" id="bpTitle">Cable Sizing & Single-Line Diagram (SLD) Verification</h3>
+              <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7;" id="bpDesc">
+                Our in-house MEP electrical engineers review your electrical load schedule, verify thermal derating factors, prospective fault currents (kA), and generate single-line diagrams pre-cleared for DEWA, SEWA, and ADDC review.
+              </p>
+
+              <!-- Technical Schematic ASCII / Wireframe Preview -->
+              <div class="schematic-wireframe-box" id="bpSchematic">
+[GRID INPUT: 11kV/400V 1600kVA] ──> [FORM 4 MDB] ──> [DERATING: 50°C AMBIENT]
+  ├── FEEDER 1: 4C x 300mm² Cu/XLPE/SWA/LSF ──> [SMDB-GF] (ΔV: 1.8%)
+  ├── FEEDER 2: 4C x 185mm² Cu/XLPE/SWA/LSF ──> [SMDB-1F] (ΔV: 2.1%)
+  └── BUSDUCT: 2500A Compact Sandwich ──> [RISING MAIN] (IP68)
+              </div>
+
+              <!-- Deliverables Checklist -->
+              <div style="margin-top:20px;">
+                <div style="font-weight:700; font-size:0.88rem; color:var(--navy); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.05em;">Phase Deliverables:</div>
+                <ul id="bpDeliverables" style="list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.86rem; color:var(--text-muted);">
+                  <li>✓ Certified Voltage Drop Calculations (<2.5%)</li>
+                  <li>✓ Short-Circuit Fault Rating Calculations</li>
+                  <li>✓ Cable Tray Weight & Fill Ratio Schedule</li>
+                  <li>✓ Complete Material Submittal Dossier</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Canvas Bottom Actions -->
+            <div style="margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+              <div>
+                <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Guaranteed SLA</span>
+                <div style="font-weight:800; font-size:1.1rem; color:var(--emerald-live);" id="bpSLA">24-Hour Review Turnaround</div>
+              </div>
+              <a href="#quote" class="btn btn-primary btn-sm" onclick="openUniversalRFQ('Engineering Sizing Review')">Request Phase Consultation →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: SOLAR PV & ENERGY RETROFIT CALCULATOR -->
+  <section class="section" id="retrofit" style="background:var(--bg-surface); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Clean Energy ROI Modeling</div>
+        <h2>Commercial Solar PV & Retrofit Savings Lab</h2>
+        <p style="color:var(--text-muted); max-width:680px; margin:0 auto;">Adjust your monthly electricity spend and warehouse/facility roof footprint to estimate your annual utility cost reduction under Shams Dubai & SEWA net-metering schemes.</p>
+      </div>
+
+      <div class="retrofit-calc-card fade-in">
+        
+        <!-- Controls Column -->
+        <div>
+          <div class="calc-slider-group">
+            <div class="calc-slider-header">
+              <span style="color:var(--text-main);">Current Monthly DEWA/SEWA Power Bill</span>
+              <span class="calc-slider-val" id="dispBill">AED 35,000 / mo</span>
+            </div>
+            <input type="range" class="calc-slider-input" id="billSlider" min="5000" max="200000" step="2500" value="35000" oninput="updateRetrofitCalculator()">
+            <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-dim); margin-top:4px;">
+              <span>AED 5,000 (Small Commercial)</span>
+              <span>AED 200,000+ (Heavy Industrial)</span>
+            </div>
+          </div>
+
+          <div class="calc-slider-group">
+            <div class="calc-slider-header">
+              <span style="color:var(--text-main);">Available Roof / Yard Area</span>
+              <span class="calc-slider-val" id="dispArea" style="color:var(--royal-blue);">2,500 m²</span>
+            </div>
+            <input type="range" class="calc-slider-input" id="areaSlider" min="500" max="15000" step="250" value="2500" oninput="updateRetrofitCalculator()" style="accent-color:var(--royal-blue);">
+            <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-dim); margin-top:4px;">
+              <span>500 m² (Villa / Retail)</span>
+              <span>15,000 m² (Logistics Depot)</span>
+            </div>
+          </div>
+
+          <div class="calc-slider-group" style="margin-bottom:0;">
+            <div class="calc-slider-header">
+              <span style="color:var(--text-main);">Daily Operational Profile</span>
+              <span class="calc-slider-val" id="dispProfile" style="color:var(--royal-blue); font-size:1rem;">Daytime Peak (12h)</span>
+            </div>
+            <select id="profileSelect" onchange="updateRetrofitCalculator()" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); color:var(--text-main); font-size:0.9rem; outline:none;">
+              <option value="0.42">Standard Commercial (8am - 6pm Daytime Peak)</option>
+              <option value="0.55">Heavy Manufacturing & Cold Storage (24/7 Sustained Load)</option>
+              <option value="0.35">Logistics & Warehousing (Daytime Forklift Charging)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Output Column -->
+        <div style="background:#0A2540; border:1px solid rgba(6, 106, 171, 0.35); border-radius:var(--radius-lg); padding:32px; color:#FFFFFF; box-shadow:0 12px 35px rgba(10,37,64,0.18);">
+          <div style="font-family:var(--font-mono); font-size:0.72rem; color:#38BDF8; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px; font-weight:700;">ESTIMATED FEASIBILITY AUDIT</div>
+          <div class="calc-metrics-grid">
+            
+            <div class="calc-result-box" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+              <div class="calc-result-val" id="resAnnualSavings" style="color:#38BDF8;">AED 176K</div>
+              <div class="calc-result-label" style="color:rgba(255,255,255,0.7);">Annual Cost Savings</div>
+            </div>
+
+            <div class="calc-result-box" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+              <div class="calc-result-val" id="resSystemKwp" style="color:var(--sky-blue);">340 kWp</div>
+              <div class="calc-result-label" style="color:rgba(255,255,255,0.7);">Recommended Solar PV</div>
+            </div>
+
+            <div class="calc-result-box" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+              <div class="calc-result-val" id="resCO2" style="color:#34D399;">285 T</div>
+              <div class="calc-result-label" style="color:rgba(255,255,255,0.7);">CO2 Abated / Year</div>
+            </div>
+
+            <div class="calc-result-box" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+              <div class="calc-result-val" id="resPayback" style="color:#A78BFA;">2.8 Yrs</div>
+              <div class="calc-result-label" style="color:rgba(255,255,255,0.7);">Est. Capital Payback</div>
+            </div>
+
+          </div>
+
+          <div style="margin-top:24px; text-align:center;">
+            <button class="btn btn-primary" style="width:100%; justify-content:center; background:linear-gradient(135deg, var(--royal-blue), var(--sky-blue));" onclick="openUniversalRFQ('Solar PV Retrofit Feasibility')">Request Detailed Solar Feasibility Audit →</button>
+            <div style="font-size:0.75rem; color:rgba(255,255,255,0.7); margin-top:8px;">Compliant with Shams Dubai DEWA & SEWA Green Net Metering regulations.</div>
+          </div>
+        </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="openUniversalRFQ('Solar PV Retrofit Feasibility')">Request Detailed Solar Feasibility Audit →</button>
+            <div style="font-size:0.75rem; color:var(--text-dim); margin-top:8px;">Compliant with Shams Dubai DEWA & SEWA Green Net Metering regulations.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: FIELD TESTING & COMMISSIONING PROTOCOLS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Testing Laboratory</div>
+        <h2>Factory & Field Commissioning Protocols</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">Certified pre-delivery quality checks witnessed by consulting engineers at our Sharjah facility.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;" class="fade-in">
+        <div class="testing-protocol-card">
+          <div style="font-size:2rem; margin-bottom:12px;">⚡</div>
+          <h4 style="font-size:1.15rem; color:var(--text-main); margin-bottom:8px;">Primary Current Injection</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+            Calibrated secondary and primary current injection into ACBs, MCCBs, and protective trip relays to verify disconnection times within milliseconds under IEC 60947.
+          </p>
+          <div style="font-size:0.78rem; color:var(--gold-light);">Standard: IEC 61439-1 / BS EN 60947</div>
+        </div>
+
+        <div class="testing-protocol-card">
+          <div style="font-size:2rem; margin-bottom:12px;">🛡️</div>
+          <h4 style="font-size:1.15rem; color:var(--text-main); margin-bottom:8px;">High-Voltage Dielectric Insulation</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+            2.5kV AC dielectric withstand and 1000V DC megger insulation resistance tests (>100MΩ) across all copper busbars, insulators, and neutral links.
+          </p>
+          <div style="font-size:0.78rem; color:var(--cyan);">Verification: Zero Breakdown at 2500V</div>
+        </div>
+
+        <div class="testing-protocol-card">
+          <div style="font-size:2rem; margin-bottom:12px;">🔧</div>
+          <h4 style="font-size:1.15rem; color:var(--text-main); margin-bottom:8px;">Hydrostatic Pipe Pressure Testing</h4>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+            PN20 (20 Bar) hydrostatic sustained hold tests for PPR and HDPE butt-fusion jointed assemblies ensuring zero leakage prior to trench backfilling.
+          </p>
+          <div style="font-size:0.78rem; color:var(--emerald-live);">Hold Duration: 24 Hours Continuous</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: SLA COMPARISON MATRIX -->
+  <section class="section" style="background:var(--bg-surface); border-top:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Procurement Risk Mitigation</div>
+        <h2>Why Tier-1 Contractors Mandate Al Shadouf</h2>
+        <p style="color:var(--text-muted); max-width:680px; margin:0 auto;">Compare Al Shadouf's sovereign supply guarantees against conventional open-market brokers.</p>
+      </div>
+
+      <div style="overflow-x:auto;" class="fade-in">
+        <table class="sla-table">
+          <thead>
+            <tr>
+              <th style="width:30%;">Operational Parameter</th>
+              <th style="width:35%; color:var(--royal-blue); background:#EFF6FF; border-bottom:2px solid var(--royal-blue);">Al Shadouf Sovereign Enterprise Agreement</th>
+              <th style="width:35%; color:var(--text-dim);">Conventional Grey-Market Broker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:700; color:var(--text-main);">Mill Test Certificates (MTC)</td>
+              <td style="color:var(--emerald-live); font-weight:700;">✓ 100% Original Heat Number Traceability with each delivery</td>
+              <td style="color:#EF4444;">✗ Untracked batches or photocopied batch sheets</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700; color:var(--text-main);">Utility Submittal Approvals</td>
+              <td style="color:var(--emerald-live); font-weight:700;">✓ Pre-cleared technical submittals for DEWA, SEWA & ADDC</td>
+              <td style="color:#EF4444;">✗ Frequent rejection cycles costing weeks in site delays</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700; color:var(--text-main);">Site Offloading Capability</td>
+              <td style="color:var(--emerald-live); font-weight:700;">✓ Self-loading HIAB Crane Trucks included for heavy drums & trays</td>
+              <td style="color:#EF4444;">✗ Contractor must arrange manual forklift / crane on-site</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700; color:var(--text-main);">Emergency Delivery SLA</td>
+              <td style="color:var(--emerald-live); font-weight:700;">✓ Sub-4-Hour urgent site hot-shot dispatch from Sharjah yard</td>
+              <td style="color:#EF4444;">✗ 3 to 7 working days minimum lead time</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700; color:var(--text-main);">Manufacturer Warranty</td>
+              <td style="color:var(--emerald-live); font-weight:700;">✓ Direct factory backed 5-25 year warranties (MK, Ducab, ABB)</td>
+              <td style="color:#EF4444;">✗ Disclaimed once goods leave unverified staging yard</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal RFQ Modal -->
+  <div class="rfq-modal-overlay" id="rfqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,37,64,0.7); backdrop-filter:blur(8px); z-index:9999; align-items:center; justify-content:center;">
+    <div class="rfq-modal-card" style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:16px; padding:36px; max-width:540px; width:92%; position:relative; box-shadow:0 25px 60px rgba(0, 0, 0, 0.15); color:var(--text-main);">
+      <button onclick="document.getElementById('rfqModal').style.display='none'" style="position:absolute; top:18px; right:20px; background:none; border:none; color:var(--text-dim); font-size:1.5rem; cursor:pointer;">&times;</button>
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; font-weight:700;">ENGINEERING ESTIMATION DESK</div>
+      <h3 style="font-size:1.5rem; margin-bottom:12px; color:var(--navy);">Request Engineering Service Consultation</h3>
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:20px;">Direct coordination with senior MEP applications engineers. Sub-4-Hour SLA.</p>
+      <form id="rfqForm" onsubmit="handleUniversalRFQ(event)">
+        <div style="margin-bottom:14px;">
+          <input type="text" name="name" required placeholder="Consulting Engineer / Project Manager Name" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="margin-bottom:14px;">
+          <input type="text" name="company" required placeholder="Consultancy / Contracting Firm (e.g. Arabtec, Drake & Scull)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+          <input type="tel" name="phone" required placeholder="Phone / WhatsApp (+971)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+          <input type="email" name="email" required placeholder="Corporate Email" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="margin-bottom:18px;">
+          <textarea name="boq" id="rfqServiceNote" rows="3" placeholder="Specify required scope: Cable Sizing, FAT Testing, Shams Solar, or Emergency Dispatch..." style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem; resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">🚀 Dispatch To Chief MEP Engineer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer: Standalone Exact Official Logo -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; margin-bottom:16px;">
+            <img src="images/New01shadouf_logo02.svg" alt="Al Shadouf Group" class="nav-official-logo">
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.7;">
+            Sovereign MEP infrastructure trading group headquartered in Sharjah, UAE. Precision building materials and engineering services for landmark developments.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Product Catalog</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Engineering Services</h4>
+          <a href="services.html">SLD & Cable Sizing</a>
+          <a href="services.html">Solar PV Net Metering</a>
+          <a href="services.html">Switchgear FAT Testing</a>
+          <a href="services.html">24/7 Site Emergency</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Desk</h4>
+          <a href="tel:+97165423984">+971 (06) 542 3984</a>
+          <a href="mailto:contact@alshadouf.com">contact@alshadouf.com</a>
+          <a href="#">Industrial Area 6, Sharjah, UAE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Al Shadouf Group. All Rights Reserved.</div>
+        <div>ISO 9001:2015 · DEWA & SEWA Compliant · Certified Engineers</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const blueprintData = [
+      {
+        pill: 'DISCIPLINE: ELECTRICAL SIZING',
+        standard: 'CODE: IEC 60364 / BS 7671',
+        title: 'Cable Sizing & Single-Line Diagram (SLD) Verification',
+        desc: 'Our in-house MEP electrical engineers review your electrical load schedule, verify thermal derating factors, prospective fault currents (kA), and generate single-line diagrams pre-cleared for DEWA, SEWA, and ADDC review.',
+        schematic: `[GRID INPUT: 11kV/400V 1600kVA] ──> [FORM 4 MDB] ──> [DERATING: 50°C AMBIENT]
+  ├── FEEDER 1: 4C x 300mm² Cu/XLPE/SWA/LSF ──> [SMDB-GF] (ΔV: 1.8%)
+  ├── FEEDER 2: 4C x 185mm² Cu/XLPE/SWA/LSF ──> [SMDB-1F] (ΔV: 2.1%)
+  └── BUSDUCT: 2500A Compact Sandwich ──> [RISING MAIN] (IP68)`,
+        deliverables: [
+          'Certified Voltage Drop Calculations (<2.5%)',
+          'Short-Circuit Fault Rating Calculations (50kA / 1s)',
+          'Cable Tray Weight & Fill Ratio Schedule',
+          'Complete Material Submittal Dossier (DEWA Format)'
+        ],
+        sla: '24-Hour Review Turnaround'
+      },
+      {
+        pill: 'DISCIPLINE: LOGISTICS OPERATIONS',
+        standard: 'FLEET: 18 HEAVY ARTICULATED FLATBEDS',
+        title: 'Central Yard Staging & Just-In-Time Dispatch',
+        desc: 'Avoid congested jobsite clutter. We store your scheduled project material at our 120,000 sq.ft Sharjah Central Yard and dispatch by phase, floor-by-floor, with certified crane-mounted flatbeds.',
+        schematic: `[SHARJAH CENTRAL YARD] ──> [BARCODE BATCH STAGING] ──> [CRANE LOADING]
+  ├── TRUCK 1: 05:30 GST ──> [DUBAI BUSINESS BAY] (Floor 10-15 Containment)
+  ├── TRUCK 2: 07:00 GST ──> [JAFZA LOGISTICS HUB] (HDPE Drainage Pipes)
+  └── TRUCK 3: 09:30 GST ──> [ABU DHABI ICAD] (Furse Copper Grounding Bars)`,
+        deliverables: [
+          'Staggered Delivery Schedules matched to construction milestones',
+          'Self-offloading HIAB Crane Flatbed Trucks',
+          'Weather-Proof Moisture Barrier Shrink-Wrapping',
+          'Signed On-Site Delivery Notes with Material Heat Numbers'
+        ],
+        sla: '100% On-Time Site Arrival'
+      },
+      {
+        pill: 'DISCIPLINE: CLEAN ENERGY / DEWA SHAMS',
+        standard: 'CERTIFICATION: DEWA DRRG & ABB EV CERTIFIED',
+        title: 'Solar PV & EV Charging Infrastructure Engineering',
+        desc: 'Turnkey engineering for commercial rooftop solar grid-tie systems and ABB Terra commercial EV charging hubs. We manage the complete technical package from shade simulation to utility net-metering interconnection.',
+        schematic: `[SOLAR ARRAY: 350 kWp TIER-1 BI-FACIAL] ──> [DC ISOLATOR 1500V]
+  └── [STRING INVERTER: ABB 100kW x 3] ──> [DEWA BIDIRECTIONAL METER]
+        └── [EV HUB: 4 x ABB TERRA AC 22kW + 1 x 50kW DC FAST CHARGER]`,
+        deliverables: [
+          'PVsyst Helioscope Solar Yield & Shading Simulation',
+          'DEWA Shams Dubai Grid Connection Application Pack',
+          'MID-Certified Sub-metering & Dynamic Load Balancing',
+          'OCPP 1.6J Cloud Billing Platform Integration'
+        ],
+        sla: 'Guaranteed Shams DEWA First-Pass'
+      },
+      {
+        pill: 'DISCIPLINE: SWITCHGEAR QA/QC',
+        standard: 'STANDARD: IEC 61439-1/2 (FORM 2 TO 4B)',
+        title: 'Switchgear Factory Acceptance Testing (FAT)',
+        desc: 'Comprehensive pre-delivery testing of main distribution boards (MDB), sub-main panels (SMDB), and motor control centers (MCC) at our certified Sharjah testing lab in the presence of your consultant engineers.',
+        schematic: `[PANEL UNDER TEST: 3200A FORM 4B MDB]
+  ├── TEST 1: High Voltage Dielectric Withstand (2500V AC / 1 Min)
+  ├── TEST 2: Primary Current Injection Trip Time (ACB 0.1s - 1.0s)
+  ├── TEST 3: Insulation Resistance (Megger 1000V DC > 100 MΩ)
+  └── TEST 4: Control Circuit & Shunt Trip Automation Verification`,
+        deliverables: [
+          'Full Factory Acceptance Test (FAT) Certification Protocol',
+          'Calibrated Secondary Injection Test Graphs',
+          'Third-Party Authority Inspection Sign-Off Sheet',
+          'As-Built CAD Wiring Schematics & Maintenance Dossier'
+        ],
+        sla: 'Zero-Defect Jobsite Delivery'
+      },
+      {
+        pill: 'DISCIPLINE: EMERGENCY RESPONSE',
+        standard: 'COVERAGE: 24/7/365 NATIONWIDE UAE',
+        title: '24/7 Rapid Emergency MEP Site Replacements',
+        desc: 'Unplanned power outage, water main burst, or cable insulation failure on active job sites? Our dedicated rapid-response trucks dispatch replacement breakers, cable joints, and valves around the clock.',
+        schematic: `[HOTLINE ALERT: +971 6 542 3984] ──> [ON-CALL DISPATCH ENGINEER]
+  └── [WAREHOUSE AUTO-PICK] ──> [RAPID FLATBED DISPATCH]
+        ├── TRANSIT TO DUBAI: 28 Minutes via E311
+        ├── TRANSIT TO SHARJAH: 12 Minutes Direct
+        └── SITE TURNOVER: Sub-4-Hour Complete Material Handover`,
+        deliverables: [
+          'Emergency Dedicated Phone & WhatsApp Hotline Dispatch',
+          'Immediate Stock Allocation without waiting for credit approvals',
+          'Emergency Cable Jointing Kits & Hydro Fusion Couplers',
+          'Emergency Delivery Ticket for Insurance Documentation'
+        ],
+        sla: 'Sub-4-Hour Site Arrival'
+      }
+    ];
+
+    function switchBlueprintTab(index) {
+      const data = blueprintData[index];
+      const buttons = document.querySelectorAll('.blueprint-tab-btn');
+      buttons.forEach((btn, i) => {
+        if (i === index) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+
+      document.getElementById('bpPill').textContent = data.pill;
+      document.getElementById('bpStandard').textContent = data.standard;
+      document.getElementById('bpTitle').textContent = data.title;
+      document.getElementById('bpDesc').textContent = data.desc;
+      document.getElementById('bpSchematic').textContent = data.schematic;
+      document.getElementById('bpSLA').textContent = data.sla;
+
+      const delivList = document.getElementById('bpDeliverables');
+      delivList.innerHTML = '';
+      data.deliverables.forEach(d => {
+        const li = document.createElement('li');
+        li.textContent = `✓ ${d}`;
+        delivList.appendChild(li);
+      });
+    }
+
+    function updateRetrofitCalculator() {
+      const bill = parseFloat(document.getElementById('billSlider').value);
+      const area = parseFloat(document.getElementById('areaSlider').value);
+      const profile = parseFloat(document.getElementById('profileSelect').value);
+
+      document.getElementById('dispBill').textContent = `AED ${bill.toLocaleString()} / mo`;
+      document.getElementById('dispArea').textContent = `${area.toLocaleString()} m²`;
+
+      const annualBill = bill * 12;
+      const estimatedSavings = Math.round(annualBill * profile * 0.95);
+      const systemKwp = Math.min(Math.round(area * 0.14), Math.round((bill / 45) * 1.1));
+      const co2Tons = Math.round(systemKwp * 0.85);
+      const capitalEst = systemKwp * 2900;
+      const payback = (capitalEst / estimatedSavings).toFixed(1);
+
+      document.getElementById('resAnnualSavings').textContent = `AED ${(estimatedSavings/1000).toFixed(0)}K`;
+      document.getElementById('resSystemKwp').textContent = `${systemKwp} kWp`;
+      document.getElementById('resCO2').textContent = `${co2Tons} T`;
+      document.getElementById('resPayback').textContent = `${payback} Yrs`;
+    }
+
+    function openUniversalRFQ(serviceNote) {
+      const noteInput = document.getElementById('rfqServiceNote');
+      if (noteInput && serviceNote) {
+        noteInput.value = `Requested Service Scope: ${serviceNote}`;
+      }
+      document.getElementById('rfqModal').style.display = 'flex';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateRetrofitCalculator();
+    });
+  </script>
+</body>
+</html>

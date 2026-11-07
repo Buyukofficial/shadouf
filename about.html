@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Al Shadouf Group: 31 years of sovereign MEP infrastructure engineering, Sharjah central staging yard, ancient lever mechanical advantage, and ISO 9001 certification.">
+  <title>Corporate Heritage & Engineering Authority | Al Shadouf Group — UAE</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* TOTALLY UNIQUE ABOUT PAGE OPENING: CINEMATIC ARCHIVAL DOSSIER */
+    .about-archival-hero {
+      padding-top: 110px;
+      padding-bottom: 60px;
+      position: relative;
+      background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .hero-watermark-year {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(8rem, 20vw, 18rem);
+      font-weight: 900;
+      color: rgba(6, 106, 171, 0.04);
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 900px) {
+      .about-hero-grid { grid-template-columns: 1fr; }
+    }
+    .about-hero-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .archival-photo-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 15px 45px rgba(6, 106, 171, 0.1);
+    }
+    .archival-photo-frame img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.02) brightness(0.98);
+    }
+    .archival-gold-stamp {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: #0A2540;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--royal-blue);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: 0 10px 30px rgba(10, 37, 64, 0.3);
+      text-align: right;
+      color: #FFFFFF;
+    }
+
+    /* Ancient Lever Card */
+    .lever-physics-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .lever-physics-card { grid-template-columns: 1fr; }
+    }
+    .lever-canvas-box {
+      background: #F8FAFC;
+      border: 1px dashed rgba(6, 106, 171, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .lever-beam {
+      width: 80%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--royal-blue), var(--sky-blue));
+      border-radius: 3px;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .lever-fulcrum {
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 28px solid #0A2540;
+      margin-top: -2px;
+    }
+
+    /* 31-Year Timeline */
+    .timeline-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    @media (max-width: 900px) {
+      .timeline-strip { grid-template-columns: 1fr; }
+    }
+    .timeline-node {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .timeline-node:hover, .timeline-node.active {
+      border-color: var(--royal-blue);
+      background: #EFF6FF;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(6, 106, 171, 0.12);
+    }
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--royal-blue);
+      margin-bottom: 6px;
+    }
+
+    /* 3-Zone Yard Tour */
+    .yard-zone-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    .yard-zone-card:hover {
+      border-color: var(--royal-blue);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(6, 106, 171, 0.12);
+    }
+    .yard-zone-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Executive Dossiers */
+    .exec-dossier-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .exec-dossier-card:hover {
+      border-color: var(--royal-blue);
+      box-shadow: 0 12px 30px rgba(6, 106, 171, 0.1);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+97165423984"><span style="color:var(--gold);">📞</span> +971 (06) 542 3984</a>
+        <a href="mailto:contact@alshadouf.com"><span style="color:var(--cyan);">✉️</span> contact@alshadouf.com</a>
+        <span>Industrial Area - 06, Sharjah, UAE</span>
+      </div>
+      <div class="top-bar-right">
+        <span>Founded 1995 · 31 Years of Sovereign UAE Supply</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar: Standalone Exact Official Logo -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" style="display:flex; align-items:center;">
+        <img src="images/New01shadouf_logo_dark.svg" alt="Al Shadouf Group" class="nav-official-logo">
+      </a>
+
+      <div class="nav-menu" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-link">Products <span style="font-size:0.65rem; opacity:0.6;">▼</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="products.html?cat=electrical">⚡ Electrical & Cable Systems</a>
+            <a href="products.html?cat=switchgear">⚙️ Switchgear & Enclosures</a>
+            <a href="products.html?cat=solar">☀️ Solar PV & EV Charging</a>
+            <a href="products.html?cat=plumbing">🔧 Drainage & Hydro Piping</a>
+            <a href="products.html?cat=lighting">💡 Architectural & LED Lighting</a>
+            <a href="products.html?cat=earthing">⚡ Earthing & Lightning Bars</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#quote" class="btn btn-primary btn-sm nav-cta">Instant RFQ</a>
+      </div>
+
+      <div class="hamburger" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TOTALLY UNIQUE HERO: CINEMATIC ARCHIVAL DOSSIER -->
+  <section class="about-archival-hero">
+    <div class="hero-watermark-year">1995</div>
+    <div class="container">
+      <div class="about-hero-grid fade-in">
+        
+        <!-- Left Editorial Narrative -->
+        <div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <span class="tech-pill" style="border-color:var(--royal-blue); color:var(--royal-blue);">SOVEREIGN MEP HERITAGE</span>
+            <span style="font-size:0.8rem; color:var(--text-dim); text-transform:uppercase;">Sharjah Industrial Area 6</span>
+          </div>
+
+          <h1 class="about-hero-title">
+            Thirty-One Years of <span class="text-gradient">Infrastructure Authority.</span>
+          </h1>
+
+          <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin-bottom:24px;">
+            Established in Sharjah in 1995, <strong>Al Shadouf Building Materials Trading Co LLC</strong> was founded alongside the birth of the modern UAE skyline. Today, we are the sovereign backbone supplying certified electro-mechanical packages to over 1,250 landmark towers, data hubs, and ports.
+          </p>
+
+          <!-- 3 Archival Key Metrics -->
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-bottom:28px;">
+            <div style="border-left:2px solid var(--royal-blue); padding-left:14px;">
+              <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:900; color:var(--royal-blue);">31 Years</div>
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Continuous UAE Supply</div>
+            </div>
+            <div style="border-left:2px solid var(--sky-blue); padding-left:14px;">
+              <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:900; color:var(--royal-blue);">1,250+</div>
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Delivered Sites</div>
+            </div>
+            <div style="border-left:2px solid var(--emerald-live); padding-left:14px;">
+              <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:900; color:var(--emerald-live);">AED 500M+</div>
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Deployed Materials</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="#prequal" class="btn btn-primary btn-sm">Download Prequalification Pack 📥</a>
+            <a href="products.html" class="btn btn-outline btn-sm">Inspect 5,420+ Materials →</a>
+          </div>
+        </div>
+
+        <!-- Right Archival Photo Frame with Official Chamber Stamp -->
+        <div class="archival-photo-frame">
+          <img src="images/slider01-370x200_c.jpg" alt="Al Shadouf Sharjah Central Facility 1995">
+          <div class="archival-gold-stamp">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:#38BDF8; letter-spacing:0.1em; text-transform:uppercase;">CERTIFIED ENTERPRISE</div>
+            <div style="font-weight:800; font-size:0.95rem; color:#FFFFFF;">SHARJAH CHAMBER REG. #34881</div>
+            <div style="font-size:0.75rem; color:#34D399;">ISO 9001:2015 · DEWA & SEWA Compliant</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: ANCIENT SHADOUF MECHANICAL ADVANTAGE MODULE -->
+  <section class="section">
+    <div class="container">
+      <div class="lever-physics-card fade-in">
+        
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="tech-pill" style="border-color:rgba(6,106,171,0.3); color:var(--royal-blue);">THE AL SHADOUF ORIGIN</span>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);">MECHANICS: F₁ × D₁ = F₂ × D₂</span>
+          </div>
+          <h2 style="font-size:1.8rem; color:var(--navy); margin-bottom:14px;">
+            The 5,000-Year-Old Lever of Mechanical Advantage.
+          </h2>
+          <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:16px;">
+            In ancient Arabic engineering, the <em>Shadouf</em> (الشادوف) was the world’s first balanced counterweight crane, enabling desert civilisations to effortlessly lift heavy water from deep wells using an asymmetrical pivot.
+          </p>
+          <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+            Founded in 1995, our company took this name as a philosophical oath: to give modern UAE MEP contractors the <strong>mechanical advantage</strong> in procurement — lifting project burdens through sovereign stock, unmatched credit terms, and sub-4-hour site dispatch.
+          </p>
+
+          <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:var(--radius-md); padding:16px; font-size:0.85rem; color:var(--navy);">
+            💡 <strong>Interactive Slider:</strong> Drag the fulcrum balance below to witness the ancient physics that powers our logistics philosophy.
+          </div>
+        </div>
+
+        <!-- Interactive Lever Canvas -->
+        <div class="lever-canvas-box">
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); margin-bottom:24px;" id="leverReadout">
+            FULCRUM RATIO: 3.5:1 (MAXIMUM MECHANICAL ADVANTAGE)
+          </div>
+
+          <div class="lever-beam" id="leverBeam">
+            <!-- Left Counterweight -->
+            <div style="position:absolute; left:-12px; top:-18px; background:var(--royal-blue); color:#FFFFFF; font-weight:800; font-size:0.7rem; padding:4px 8px; border-radius:4px; box-shadow:0 0 12px rgba(6,106,171,0.4);">
+              AL SHADOUF
+            </div>
+            <!-- Right Heavy Load -->
+            <div style="position:absolute; right:-12px; top:-18px; background:#0A2540; color:#FFFFFF; font-weight:800; font-size:0.7rem; padding:4px 8px; border-radius:4px;">
+              MEP MEGA-LOAD
+            </div>
+          </div>
+          <div class="lever-fulcrum"></div>
+
+          <div style="width:100%; margin-top:28px;">
+            <input type="range" min="-12" max="12" value="-6" style="width:100%; accent-color:var(--royal-blue); cursor:pointer;" id="leverSlider" oninput="tiltLever(this.value)">
+            <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-dim); margin-top:6px;">
+              <span>Heavy Contractor Load</span>
+              <span>Balanced Equilibrium</span>
+              <span>Maximum Al Shadouf Leverage</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: 31-YEAR TIMELINE (1995 - 2026) -->
+  <section class="section" style="background:var(--bg-surface); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Chronicle of Growth</div>
+        <h2>31 Years of Infrastructure Dominance</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">From a specialized electrical conduit warehouse in Sharjah to a nationwide MEP logistics powerhouse.</p>
+      </div>
+
+      <div class="timeline-strip fade-in">
+        <div class="timeline-node">
+          <div class="timeline-year">1995</div>
+          <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Sharjah Foundation</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            Established in Industrial Area 6, stocking British Standard GI conduits, cast circular boxes, and electrical brass accessories.
+          </p>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-year">2004</div>
+          <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Dubai Skyline Expansion</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            Awarded prime electrical containment packages for high-rise residential towers across Dubai Marina and Business Bay.
+          </p>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-year">2012</div>
+          <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Hydro & Piping Division</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            Integrated underground PVC-U sewer systems, butt-fusion HDPE pressure ducts, and PPR thermal fusion plumbing lines.
+          </p>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-year">2020</div>
+          <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Solar PV & EV Charging</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            Partnered with ABB to distribute Terra AC/DC EV charging stations and Shams Dubai commercial rooftop solar components.
+          </p>
+        </div>
+
+        <div class="timeline-node active">
+          <div class="timeline-year">2026</div>
+          <div style="font-weight:700; color:var(--text-main); margin-bottom:6px;">Sovereign Platform</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            Full digital inventory integration, live BOQ builder, 5,420+ active SKUs, and sub-4-hour emergency site logistics across UAE.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: 3-ZONE SHARJAH LOGISTICS YARD TOUR -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Physical Infrastructure</div>
+        <h2>Sharjah Central Staging Yard: 3-Zone Visual Inspection</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">Explore the high-bay facilities in Sharjah Industrial Area 6 that power our rapid site delivery.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;" class="fade-in">
+        
+        <!-- Zone 1: Dispatch Hub -->
+        <div class="yard-zone-card">
+          <img src="images/slider01-370x200_c.jpg" alt="Zone 1 Central Dispatch Hub" class="yard-zone-img">
+          <div style="padding:24px;">
+            <span class="tech-pill" style="margin-bottom:8px; border-color:var(--royal-blue); color:var(--royal-blue);">ZONE 01: LOGISTICS DOCK</span>
+            <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:8px;">High-Bay Loading & Trailer Depot</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              Accommodates four 40-foot articulated tractor-trailers simultaneously with 30-ton overhead gantry cranes for immediate offloading.
+            </p>
+            <div style="font-size:0.78rem; color:var(--text-dim);">Capacity: 120 Tons Daily Dispatch</div>
+          </div>
+        </div>
+
+        <!-- Zone 2: Steel & Piping -->
+        <div class="yard-zone-card">
+          <img src="images/slide03-370x200_c.jpg" alt="Zone 2 Piping Yard" class="yard-zone-img">
+          <div style="padding:24px;">
+            <span class="tech-pill" style="margin-bottom:8px; border-color:var(--sky-blue); color:var(--royal-blue);">ZONE 02: HYDRO YARD</span>
+            <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:8px;">HDPE, PVC & Strut Channel Depot</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              Dedicated outdoor weather-protected staging for 6-meter pipe lengths, strut trapeze hangers, and subsoil road drainage coils.
+            </p>
+            <div style="font-size:0.78rem; color:var(--text-dim);">Inventory: 28,000m Active Stock</div>
+          </div>
+        </div>
+
+        <!-- Zone 3: Cable Drums -->
+        <div class="yard-zone-card">
+          <img src="images/slide05-370x200_c.png" alt="Zone 3 Cable Hub" class="yard-zone-img">
+          <div style="padding:24px;">
+            <span class="tech-pill" style="margin-bottom:8px; border-color:var(--emerald-live); color:var(--emerald-live);">ZONE 03: ELECTRICAL HUB</span>
+            <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:8px;">Ducab Armored Cable Drum Staging</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              Fully stocked automated cable rewinding line with 500m & 1,000m drums from 1.5mm² wire up to 4C x 400mm² XLPE/SWA.
+            </p>
+            <div style="font-size:0.78rem; color:var(--text-dim);">Traceability: 100% Original MTC Heat #</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: EXECUTIVE LEADERSHIP & QA/QC DIRECTORS -->
+  <section class="section-sm" style="background:var(--bg-surface); border-top:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Engineering Governance</div>
+        <h2>Executive Leadership Directorate</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;" class="fade-in">
+        <div class="exec-dossier-card">
+          <div style="font-size:1.8rem; margin-bottom:8px;">👔</div>
+          <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:4px;">Managing Directorate</h4>
+          <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:10px;">Executive Board Member</div>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            Steering Al Shadouf’s sovereign capital investments, tier-1 distributor contracts with Ducab, 3M, and ABB, and major infrastructure financing.
+          </p>
+        </div>
+
+        <div class="exec-dossier-card">
+          <div style="font-size:1.8rem; margin-bottom:8px;">📐</div>
+          <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:4px;">Chief Technical Officer</h4>
+          <div style="font-size:0.8rem; color:var(--sky-blue); font-weight:700; margin-bottom:10px;">Senior Electrical & Switchgear Lead</div>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            Directing single-line diagram calculations, Form 4 FAT inspection protocols, and utility submittal approvals for DEWA, SEWA, and ADDC.
+          </p>
+        </div>
+
+        <div class="exec-dossier-card">
+          <div style="font-size:1.8rem; margin-bottom:8px;">🚛</div>
+          <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:4px;">VP Logistics & Fleet Operations</h4>
+          <div style="font-size:0.8rem; color:var(--emerald-live); font-weight:700; margin-bottom:10px;">Sharjah Central Yard Director</div>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+            Managing 18 heavy articulated flatbed trucks, crane offloading teams, and maintaining our 99.8% on-time jobsite delivery record.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: PREQUALIFICATION PACK DOWNLOAD HUB -->
+  <section class="section" id="prequal">
+    <div class="container">
+      <div style="background:linear-gradient(135deg, #0A2540 0%, #066AAB 100%); border:1px solid rgba(6,106,171,0.4); border-radius:var(--radius-xl); padding:40px; text-align:center; box-shadow:0 15px 45px rgba(6,106,171,0.2); color:#FFFFFF;" class="fade-in">
+        <span class="tech-pill" style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.3); color:#FFFFFF; margin-bottom:14px;">CONTRACTOR ONBOARDING</span>
+        <h2 style="font-size:2rem; color:#FFFFFF; margin-bottom:14px;">Instant Corporate Prequalification Dossier</h2>
+        <p style="color:rgba(255,255,255,0.9); max-width:650px; margin:0 auto 28px; line-height:1.7;">
+          Includes Al Shadouf Trade License, Sharjah Chamber of Commerce Registration, ISO 9001:2015 Certificate, DEWA/SEWA Vendor Codes, and Bank References.
+        </p>
+        <button class="btn btn-primary" style="background:#FFFFFF; color:var(--royal-blue); border-color:#FFFFFF;" onclick="openUniversalRFQ('Complete Corporate Prequalification Pack')">📥 Request Official Prequalification PDF Pack</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal RFQ Modal -->
+  <div class="rfq-modal-overlay" id="rfqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,37,64,0.7); backdrop-filter:blur(8px); z-index:9999; align-items:center; justify-content:center;">
+    <div class="rfq-modal-card" style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:16px; padding:36px; max-width:540px; width:92%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.15); color:var(--text-main);">
+      <button onclick="document.getElementById('rfqModal').style.display='none'" style="position:absolute; top:18px; right:20px; background:none; border:none; color:var(--text-dim); font-size:1.5rem; cursor:pointer;">&times;</button>
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; font-weight:700;">CORPORATE COMPLIANCE DESK</div>
+      <h3 style="font-size:1.5rem; margin-bottom:12px; color:var(--navy);">Request Prequalification Dossier</h3>
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:20px;">Complete vendor registration pack sent immediately to your corporate email.</p>
+      <form id="rfqForm" onsubmit="handleUniversalRFQ(event)">
+        <div style="margin-bottom:14px;">
+          <input type="text" name="name" required placeholder="Full Name / Commercial Officer" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="margin-bottom:14px;">
+          <input type="text" name="company" required placeholder="Contracting Firm (e.g. Al Habtoor, Dutco)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+          <input type="tel" name="phone" required placeholder="Phone / WhatsApp (+971)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+          <input type="email" name="email" required placeholder="Corporate Email" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">📥 Send Corporate Prequalification Pack</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer: Standalone Exact Official Logo -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; margin-bottom:16px;">
+            <img src="images/New01shadouf_logo02.svg" alt="Al Shadouf Group" class="nav-official-logo">
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.7;">
+            Sovereign MEP infrastructure trading group headquartered in Sharjah, UAE. Direct authorized distributor for Ducab, 3M, MK Honeywell, Furse, and Schneider Electric.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Product Catalog</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Corporate Certifications</h4>
+          <a href="#">ISO 9001:2015 Certified</a>
+          <a href="#">DEWA Vendor Approved</a>
+          <a href="#">SEWA Pre-Qualified</a>
+          <a href="#">Civil Defense Registered</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Desk</h4>
+          <a href="tel:+97165423984">+971 (06) 542 3984</a>
+          <a href="mailto:contact@alshadouf.com">contact@alshadouf.com</a>
+          <a href="#">Industrial Area 6, Sharjah, UAE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Al Shadouf Group. All Rights Reserved.</div>
+        <div>ISO 9001:2015 · 31 Years of Sovereign UAE Engineering Supply</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function tiltLever(val) {
+      const beam = document.getElementById('leverBeam');
+      const readout = document.getElementById('leverReadout');
+      const deg = parseFloat(val);
+      beam.style.transform = `rotate(${deg}deg)`;
+
+      if (deg < -4) {
+        readout.textContent = "AL SHADOUF COUNTERWEIGHT LIFTS CONTRACTOR LOAD EASILY";
+        readout.style.color = "var(--emerald-live)";
+      } else if (deg > 4) {
+        readout.textContent = "UNBALANCED CONTRACTOR LOAD (WITHOUT AL SHADOUF ADVANTAGE)";
+        readout.style.color = "#EF4444";
+      } else {
+        readout.textContent = "PERFECT MECHANICAL EQUILIBRIUM (OPTIMAL LOGISTICS)";
+        readout.style.color = "var(--royal-blue)";
+      }
+    }
+  </script>
+</body>
+</html>

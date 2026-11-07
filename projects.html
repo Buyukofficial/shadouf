@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Al Shadouf Group Landmark Project Archive: 1,250+ delivered mega-developments across Dubai, Abu Dhabi, Sharjah, and Northern Emirates since 1995.">
+  <title>UAE Landmark Project Archive & Delivery Registry | Al Shadouf Group — UAE</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* TOTALLY UNIQUE PROJECTS PAGE OPENING: INFRASTRUCTURE RADAR */
+    .projects-radar-hero {
+      padding-top: 100px;
+      padding-bottom: 50px;
+      position: relative;
+      background: radial-gradient(circle at 75% 25%, rgba(6, 106, 171, 0.05), transparent 50%),
+                  radial-gradient(circle at 25% 75%, rgba(2, 132, 199, 0.04), transparent 50%),
+                  #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .national-impact-ribbon {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .ribbon-stat-box {
+      text-align: center;
+    }
+    .ribbon-stat-val {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--royal-blue);
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+    .ribbon-stat-lbl {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .projects-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .projects-hero-grid { grid-template-columns: 1fr; }
+    }
+    .projects-hero-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Featured Project Spotlight */
+    .spotlight-project-frame {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(6, 106, 171, 0.08);
+      position: relative;
+    }
+    .spotlight-project-frame::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--royal-blue), var(--sky-blue));
+    }
+    .spotlight-metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .spotlight-metric-item {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      text-align: center;
+    }
+
+    /* Emirate Filter Pills */
+    .emirate-filter-btn {
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    .emirate-filter-btn:hover {
+      border-color: var(--royal-blue);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+    .emirate-filter-btn.active {
+      background: var(--royal-blue);
+      color: #FFFFFF;
+      border-color: var(--royal-blue);
+      box-shadow: 0 4px 16px rgba(6, 106, 171, 0.25);
+    }
+
+    /* Project Cards & Inspection Drawer */
+    .project-dossier-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .project-dossier-card:hover {
+      border-color: var(--royal-blue);
+      box-shadow: 0 16px 40px rgba(6, 106, 171, 0.12);
+      transform: translateY(-4px);
+    }
+    .project-card-banner {
+      height: 180px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+    }
+    .project-card-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(10, 37, 64, 0.1), rgba(10, 37, 64, 0.85));
+    }
+    .project-dossier-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .project-inspection-drawer {
+      display: none;
+      background: #F8FAFC;
+      border-top: 1px dashed rgba(6, 106, 171, 0.3);
+      padding: 20px 24px;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      animation: drawerSlide 0.25s ease;
+    }
+    @keyframes drawerSlide {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Logistics Corridors Grid */
+    .corridor-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .corridor-card:hover {
+      background: #FFFFFF;
+      border-color: var(--royal-blue);
+      box-shadow: 0 8px 24px rgba(6, 106, 171, 0.1);
+    }
+    .corridor-time-badge {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--royal-blue);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+97165423984"><span style="color:var(--gold);">📞</span> +971 (06) 542 3984</a>
+        <a href="mailto:contact@alshadouf.com"><span style="color:var(--cyan);">✉️</span> contact@alshadouf.com</a>
+        <span>Industrial Area - 06, Sharjah, UAE</span>
+      </div>
+      <div class="top-bar-right">
+        <span>1,250+ Verified Sites Delivered Across All 7 Emirates</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar: Standalone Exact Official Logo -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" style="display:flex; align-items:center;">
+        <img src="images/New01shadouf_logo_dark.svg" alt="Al Shadouf Group" class="nav-official-logo">
+      </a>
+
+      <div class="nav-menu" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-link">Products <span style="font-size:0.65rem; opacity:0.6;">▼</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="products.html?cat=electrical">⚡ Electrical & Cable Systems</a>
+            <a href="products.html?cat=switchgear">⚙️ Switchgear & Enclosures</a>
+            <a href="products.html?cat=solar">☀️ Solar PV & EV Charging</a>
+            <a href="products.html?cat=plumbing">🔧 Drainage & Hydro Piping</a>
+            <a href="products.html?cat=lighting">💡 Architectural & LED Lighting</a>
+            <a href="products.html?cat=earthing">⚡ Earthing & Lightning Bars</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#quote" class="btn btn-primary btn-sm nav-cta">Instant RFQ</a>
+      </div>
+
+      <div class="hamburger" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TOTALLY UNIQUE HERO: INFRASTRUCTURE RADAR -->
+  <section class="projects-radar-hero">
+    <div class="container">
+      
+      <!-- Top National Impact Ribbon -->
+      <div class="national-impact-ribbon fade-in">
+        <div class="ribbon-stat-box">
+          <div class="ribbon-stat-val">1,250+</div>
+          <div class="ribbon-stat-lbl">Delivered UAE Sites</div>
+        </div>
+        <div class="ribbon-stat-box">
+          <div class="ribbon-stat-val" style="color:var(--cyan);">AED 500M+</div>
+          <div class="ribbon-stat-lbl">Materials Deployed</div>
+        </div>
+        <div class="ribbon-stat-box">
+          <div class="ribbon-stat-val" style="color:var(--emerald-live);">7 Emirates</div>
+          <div class="ribbon-stat-lbl">Nationwide Reach</div>
+        </div>
+        <div class="ribbon-stat-box">
+          <div class="ribbon-stat-val" style="color:#A78BFA;">99.8%</div>
+          <div class="ribbon-stat-lbl">On-Time Dispatch</div>
+        </div>
+      </div>
+
+      <div class="projects-hero-grid fade-in">
+        
+        <!-- Left Hero Content -->
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="tech-pill" style="border-color:rgba(6,106,171,0.3); color:var(--royal-blue);">DELIVERY REGISTRY ARCHIVE</span>
+            <span style="font-size:0.8rem; color:var(--text-dim);">Est. 1995 · Certified Submittals</span>
+          </div>
+
+          <h1 class="projects-hero-title">
+            National Infrastructure <span class="text-gradient">Delivery Archive.</span>
+          </h1>
+
+          <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin-bottom:24px;">
+            From 45-storey commercial towers in Business Bay to high-density cold storage hubs in JAFZA, inspect key MEP material packages delivered by Al Shadouf Group across the United Arab Emirates.
+          </p>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="#registry" class="btn btn-primary btn-sm">Filter By UAE Emirate 📍</a>
+            <a href="contact.html" class="btn btn-outline btn-sm">Request Project Reference Dossier →</a>
+          </div>
+        </div>
+
+        <!-- Right Featured Megaproject Spotlight -->
+        <div class="spotlight-project-frame">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span class="tech-pill" style="border-color:rgba(6,106,171,0.3); color:var(--royal-blue);">LANDMARK SPOTLIGHT</span>
+            <span style="font-size:0.75rem; color:var(--emerald-live); font-weight:700;">🟢 COMMISSIONED</span>
+          </div>
+
+          <h3 style="font-size:1.3rem; color:var(--navy); margin-bottom:6px;">Business Bay 45-Storey Tower</h3>
+          <p style="font-size:0.84rem; color:var(--text-muted); line-height:1.5;">
+            Complete electro-mechanical materials package: Class 4 hot-dip GI containment, Ducab XLPE power cables, and Form 4 switchboards.
+          </p>
+
+          <div class="spotlight-metric-grid">
+            <div class="spotlight-metric-item">
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--royal-blue);">8,500 kVA</div>
+              <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase;">Connected Load</div>
+            </div>
+            <div class="spotlight-metric-item">
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--cyan);">32,000m</div>
+              <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase;">Ducab Cables</div>
+            </div>
+            <div class="spotlight-metric-item">
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--emerald-live);">7,400m</div>
+              <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase;">GI Trays</div>
+            </div>
+            <div class="spotlight-metric-item">
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:#A78BFA;">100%</div>
+              <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase;">DEWA 1st Pass</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: INTERACTIVE EMIRATE SELECTOR & DOSSIER GRID -->
+  <section class="section" id="registry" style="padding-top:30px;">
+    <div class="container">
+      
+      <!-- Emirate Selector Buttons -->
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:40px;" class="fade-in">
+        <button class="emirate-filter-btn active" data-emirate="all" onclick="filterProjects('all', this)">
+          <span>🌟</span> All Emirates (1,250+)
+        </button>
+        <button class="emirate-filter-btn" data-emirate="dubai" onclick="filterProjects('dubai', this)">
+          <span>🏙️</span> Dubai (540+)
+        </button>
+        <button class="emirate-filter-btn" data-emirate="sharjah" onclick="filterProjects('sharjah', this)">
+          <span>🏭</span> Sharjah (420+)
+        </button>
+        <button class="emirate-filter-btn" data-emirate="abudhabi" onclick="filterProjects('abudhabi', this)">
+          <span>🏛️</span> Abu Dhabi (180+)
+        </button>
+        <button class="emirate-filter-btn" data-emirate="northern" onclick="filterProjects('northern', this)">
+          <span>⛰️</span> Northern Emirates (110+)
+        </button>
+      </div>
+
+      <!-- Projects Dossier Grid -->
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;" id="projectsGrid">
+
+        <!-- Project 1: Dubai Maritime City -->
+        <div class="project-dossier-card fade-in" data-emirate="dubai">
+          <div class="project-card-banner" style="background-image:linear-gradient(rgba(3,6,15,0.6), rgba(3,6,15,0.9)), url('images/slide03-370x200_c.jpg');">
+            <span class="tech-pill" style="position:relative; z-index:2; border-color:rgba(56,189,248,0.5); color:var(--cyan);">Dubai · Infrastructure</span>
+          </div>
+          <div class="project-dossier-body">
+            <div>
+              <h3 style="font-size:1.25rem; margin-bottom:8px; color:var(--text-main);">Dubai Maritime City Heavy Pumping Hub</h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.6; margin-bottom:16px;">
+                Marine-grade 316L stainless steel cable trays, heavy submersible pump motor control centers (MCC), and Furse copper grounding rods.
+              </p>
+              <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:16px;">
+                <span>Scope: Marine MEP · Value: AED 6.2M</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="width:100%; justify-content:center;" onclick="toggleInspectionDrawer(this)">Inspect Submittal Specs ▾</button>
+          </div>
+          <!-- Inspection Drawer -->
+          <div class="project-inspection-drawer">
+            <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Supplied Materials Specification:</div>
+            <ul style="list-style:none; padding:0; margin:0 0 10px; color:var(--text-muted); line-height:1.6;">
+              <li>• Ducab 4C x 240mm² XLPE/SWA Marine Cables</li>
+              <li>• IP66 316L Stainless Steel Containment (BS EN 61537)</li>
+              <li>• High-fault Trefoil Cleats with Neoprene Cushion</li>
+              <li>• DEWA Submittal Approval: Approved Without Comments</li>
+            </ul>
+            <div style="font-size:0.75rem; color:var(--text-dim);">Contractor: National Marine Dredging / Main MEP JV</div>
+          </div>
+        </div>
+
+        <!-- Project 2: Sharjah Industrial City Logistics Hub -->
+        <div class="project-dossier-card fade-in" data-emirate="sharjah">
+          <div class="project-card-banner" style="background-image:linear-gradient(rgba(3,6,15,0.6), rgba(3,6,15,0.9)), url('images/slide05-370x200_c.png');">
+            <span class="tech-pill" style="position:relative; z-index:2; border-color:rgba(245,158,11,0.5); color:var(--gold);">Sharjah · Industrial</span>
+          </div>
+          <div class="project-dossier-body">
+            <div>
+              <h3 style="font-size:1.25rem; margin-bottom:8px; color:var(--text-main);">Sharjah Mega Logistics & Cold Depot</h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.6; margin-bottom:16px;">
+                120,000 sq.ft refrigerated logistics park. Supplied 2,500A Form 4 switchboards, busduct rising mains, and low-temperature PPR piping.
+              </p>
+              <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:16px;">
+                <span>Scope: Power & Cold Piping · Value: AED 4.8M</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="width:100%; justify-content:center;" onclick="toggleInspectionDrawer(this)">Inspect Submittal Specs ▾</button>
+          </div>
+          <!-- Inspection Drawer -->
+          <div class="project-inspection-drawer">
+            <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Supplied Materials Specification:</div>
+            <ul style="list-style:none; padding:0; margin:0 0 10px; color:var(--text-muted); line-height:1.6;">
+              <li>• 2,500A Form 4B Main Distribution Boards with ACB</li>
+              <li>• PPR PN20 Glycol Chilled Water Thermal Fusion Pipes</li>
+              <li>• Alfanar 10kA Miniature Circuit Breakers</li>
+              <li>• SEWA Authority Clearance: Approved First-Pass</li>
+            </ul>
+            <div style="font-size:0.75rem; color:var(--text-dim);">Contractor: Al Futtaim Engineering Partner</div>
+          </div>
+        </div>
+
+        <!-- Project 3: Abu Dhabi ICAD Manufacturing Facility -->
+        <div class="project-dossier-card fade-in" data-emirate="abudhabi">
+          <div class="project-card-banner" style="background-image:linear-gradient(rgba(3,6,15,0.6), rgba(3,6,15,0.9)), url('images/slider01-370x200_c.jpg');">
+            <span class="tech-pill" style="position:relative; z-index:2; border-color:rgba(167,139,250,0.5); color:#A78BFA;">Abu Dhabi · Manufacturing</span>
+          </div>
+          <div class="project-dossier-body">
+            <div>
+              <h3 style="font-size:1.25rem; margin-bottom:8px; color:var(--text-main);">ICAD Heavy Industrial Chemical Plant</h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.6; margin-bottom:16px;">
+                Hazardous location ATEX-certified junction boxes, explosion-proof light fittings, and LSF polymeric cable cleats resistant to chemical mist.
+              </p>
+              <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:16px;">
+                <span>Scope: Hazardous MEP · Value: AED 5.5M</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="width:100%; justify-content:center;" onclick="toggleInspectionDrawer(this)">Inspect Submittal Specs ▾</button>
+          </div>
+          <!-- Inspection Drawer -->
+          <div class="project-inspection-drawer">
+            <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Supplied Materials Specification:</div>
+            <ul style="list-style:none; padding:0; margin:0 0 10px; color:var(--text-muted); line-height:1.6;">
+              <li>• ATEX Zone 1/2 Certified Ex-Proof Enclosures</li>
+              <li>• Two-Bolt LSF UV-Stabilized Cable Cleats</li>
+              <li>• HDHC Furse Copper Grounding Mesh System</li>
+              <li>• ADDC & Civil Defense Certified</li>
+            </ul>
+            <div style="font-size:0.75rem; color:var(--text-dim);">Contractor: Consolidated Contractors Company (CCC)</div>
+          </div>
+        </div>
+
+        <!-- Project 4: Dubai Hills Luxury Villa Community -->
+        <div class="project-dossier-card fade-in" data-emirate="dubai">
+          <div class="project-card-banner" style="background-image:linear-gradient(rgba(3,6,15,0.6), rgba(3,6,15,0.9)), url('images/omnia-main-265x265_c.png'); background-size:contain; background-repeat:no-repeat;">
+            <span class="tech-pill" style="position:relative; z-index:2; border-color:rgba(16,185,129,0.5); color:#34D399;">Dubai · Residential</span>
+          </div>
+          <div class="project-dossier-body">
+            <div>
+              <h3 style="font-size:1.25rem; margin-bottom:8px; color:var(--text-main);">Dubai Hills 120-Villa Gated Community</h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.6; margin-bottom:16px;">
+                Complete high-end residential electrical and plumbing fit-out: MK Honeywell wiring devices, Omnia architectural LED downlights, and ABB EV wallboxes.
+              </p>
+              <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:16px;">
+                <span>Scope: Residential Fitout · Value: AED 7.1M</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="width:100%; justify-content:center;" onclick="toggleInspectionDrawer(this)">Inspect Submittal Specs ▾</button>
+          </div>
+          <!-- Inspection Drawer -->
+          <div class="project-inspection-drawer">
+            <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Supplied Materials Specification:</div>
+            <ul style="list-style:none; padding:0; margin:0 0 10px; color:var(--text-muted); line-height:1.6;">
+              <li>• MK Logic Plus Antimicrobial Sockets & Switches</li>
+              <li>• Omnia Anti-Glare COB LED Recessed Downlights</li>
+              <li>• 120 x ABB Terra AC 11kW Residential EV Wallboxes</li>
+              <li>• DEWA Shams Solar Ready Pre-wiring</li>
+            </ul>
+            <div style="font-size:0.75rem; color:var(--text-dim);">Contractor: Sobha Engineering & Contracting</div>
+          </div>
+        </div>
+
+        <!-- Project 5: Ras Al Khaimah Hospitality Resort -->
+        <div class="project-dossier-card fade-in" data-emirate="northern">
+          <div class="project-card-banner" style="background-image:linear-gradient(rgba(3,6,15,0.6), rgba(3,6,15,0.9)), url('images/granada-main-265x265_c.png'); background-size:contain; background-repeat:no-repeat;">
+            <span class="tech-pill" style="position:relative; z-index:2; border-color:rgba(245,158,11,0.5); color:var(--gold);">RAK · Hospitality</span>
+          </div>
+          <div class="project-dossier-body">
+            <div>
+              <h3 style="font-size:1.25rem; margin-bottom:8px; color:var(--text-main);">Al Marjan Island 5-Star Beach Resort</h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.6; margin-bottom:16px;">
+                Corrosion-resistant saline-environment lighting, IP66 distribution boxes, heavy galvanized conduit pathways, and Granada LED panels.
+              </p>
+              <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:16px;">
+                <span>Scope: Resort MEP · Value: AED 3.9M</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="width:100%; justify-content:center;" onclick="toggleInspectionDrawer(this)">Inspect Submittal Specs ▾</button>
+          </div>
+          <!-- Inspection Drawer -->
+          <div class="project-inspection-drawer">
+            <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Supplied Materials Specification:</div>
+            <ul style="list-style:none; padding:0; margin:0 0 10px; color:var(--text-muted); line-height:1.6;">
+              <li>• Marine C5-M Corrosion Resistance Coating Containment</li>
+              <li>• Granada Backlit 600x600 Corporate LED Panels</li>
+              <li>• HDPE Butt-Fusion Sanitary Drainage Networks</li>
+              <li>• FEWA / Etihad WE Approved Submittal</li>
+            </ul>
+            <div style="font-size:0.75rem; color:var(--text-dim);">Contractor: ASGC Construction LLC</div>
+          </div>
+        </div>
+
+        <!-- Project 6: Sharjah Health Authority Specialized Hospital -->
+        <div class="project-dossier-card fade-in" data-emirate="sharjah">
+          <div class="project-card-banner" style="background-image:linear-gradient(rgba(3,6,15,0.6), rgba(3,6,15,0.9)), url('images/slide05-370x200_c.png');">
+            <span class="tech-pill" style="position:relative; z-index:2; border-color:rgba(56,189,248,0.5); color:var(--cyan);">Sharjah · Healthcare</span>
+          </div>
+          <div class="project-dossier-body">
+            <div>
+              <h3 style="font-size:1.25rem; margin-bottom:8px; color:var(--text-main);">Sharjah Medical City 200-Bed Hospital</h3>
+              <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.6; margin-bottom:16px;">
+                Critical life-safety power infrastructure: Ducab fire-alarm cables, isolated ground copper earth bars, and antimicrobial healthcare wiring.
+              </p>
+              <div style="font-size:0.8rem; color:var(--royal-blue); font-weight:700; margin-bottom:16px;">
+                <span>Scope: Critical Life Safety · Value: AED 6.8M</span>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="width:100%; justify-content:center;" onclick="toggleInspectionDrawer(this)">Inspect Submittal Specs ▾</button>
+          </div>
+          <!-- Inspection Drawer -->
+          <div class="project-inspection-drawer">
+            <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Supplied Materials Specification:</div>
+            <ul style="list-style:none; padding:0; margin:0 0 10px; color:var(--text-muted); line-height:1.6;">
+              <li>• Ducab FlamBICC 3-Hour Fire-Rated Cables (BS 6387 CWZ)</li>
+              <li>• Isolated Technical Clean Earth Copper Bars</li>
+              <li>• Hospital-Grade Isolated Power Panels (IPS)</li>
+              <li>• Sharjah Civil Defense Life-Safety Approved</li>
+            </ul>
+            <div style="font-size:0.75rem; color:var(--text-dim);">Contractor: Shapoorji Pallonji Mideast</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: TRANSIT TIME CORRIDORS -->
+  <section class="section-sm" style="background:var(--bg-surface); border-top:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Sharjah Industrial Area 6 Hub</div>
+        <h2>Site Dispatch Transit Times Across UAE</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">Centrally staged between E311 (Sheikh Mohammed Bin Zayed) and E611 (Emirates Road) arterial expressways for rapid flatbed deployment.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;" class="fade-in">
+        <div class="corridor-card">
+          <div class="corridor-time-badge">28 min</div>
+          <div>
+            <div style="font-weight:700; color:var(--navy); font-size:0.95rem;">Downtown & Business Bay</div>
+            <div style="font-size:0.76rem; color:var(--text-dim);">Via E311 Corridor</div>
+          </div>
+        </div>
+
+        <div class="corridor-card">
+          <div class="corridor-time-badge">42 min</div>
+          <div>
+            <div style="font-weight:700; color:var(--navy); font-size:0.95rem;">JAFZA & Dubai South DWC</div>
+            <div style="font-size:0.76rem; color:var(--text-dim);">Via E611 Expressway</div>
+          </div>
+        </div>
+
+        <div class="corridor-card">
+          <div class="corridor-time-badge">75 min</div>
+          <div>
+            <div style="font-weight:700; color:var(--navy); font-size:0.95rem;">Abu Dhabi ICAD / Musaffah</div>
+            <div style="font-size:0.76rem; color:var(--text-dim);">Via E11 Highway</div>
+          </div>
+        </div>
+
+        <div class="corridor-card">
+          <div class="corridor-time-badge">15 min</div>
+          <div>
+            <div style="font-weight:700; color:var(--navy); font-size:0.95rem;">Port Khalid & Hamriyah FZ</div>
+            <div style="font-size:0.76rem; color:var(--text-dim);">Direct Sharjah Arterial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal RFQ Modal -->
+  <div class="rfq-modal-overlay" id="rfqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,37,64,0.7); backdrop-filter:blur(8px); z-index:9999; align-items:center; justify-content:center;">
+    <div class="rfq-modal-card" style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:16px; padding:36px; max-width:540px; width:92%; position:relative; box-shadow:0 25px 60px rgba(0, 0, 0, 0.15); color:var(--text-main);">
+      <button onclick="document.getElementById('rfqModal').style.display='none'" style="position:absolute; top:18px; right:20px; background:none; border:none; color:var(--text-dim); font-size:1.5rem; cursor:pointer;">&times;</button>
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--royal-blue); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; font-weight:700;">TENDER PRE-QUALIFICATION DESK</div>
+      <h3 style="font-size:1.5rem; margin-bottom:12px; color:var(--navy);">Request Project Prequalification Dossier</h3>
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:20px;">Download complete vendor list approvals, test certificates, and trade licenses.</p>
+      <form id="rfqForm" onsubmit="handleUniversalRFQ(event)">
+        <div style="margin-bottom:14px;">
+          <input type="text" name="name" required placeholder="Project Director / Commercial Manager Name" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="margin-bottom:14px;">
+          <input type="text" name="company" required placeholder="Contractor / Developer Name" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+          <input type="tel" name="phone" required placeholder="Phone / WhatsApp (+971)" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+          <input type="email" name="email" required placeholder="Corporate Email" style="width:100%; padding:12px 16px; background:#F8FAFC; border:1px solid var(--border-subtle); border-radius:8px; color:var(--text-main); font-size:0.9rem;">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">📥 Send Complete Project Prequalification Dossier</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer: Standalone Exact Official Logo -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; margin-bottom:16px;">
+            <img src="images/New01shadouf_logo02.svg" alt="Al Shadouf Group" class="nav-official-logo">
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.7;">
+            Sovereign MEP infrastructure trading group headquartered in Sharjah, UAE. Direct authorized distributor for Ducab, 3M, MK Honeywell, Furse, and Schneider Electric.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Product Catalog</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Project Emirates</h4>
+          <a href="projects.html?emirate=dubai">Dubai Mega-Towers</a>
+          <a href="projects.html?emirate=sharjah">Sharjah Industrial</a>
+          <a href="projects.html?emirate=abudhabi">Abu Dhabi ICAD Utilities</a>
+          <a href="projects.html?emirate=northern">Northern Emirates Resorts</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Desk</h4>
+          <a href="tel:+97165423984">+971 (06) 542 3984</a>
+          <a href="mailto:contact@alshadouf.com">contact@alshadouf.com</a>
+          <a href="#">Industrial Area 6, Sharjah, UAE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Al Shadouf Group. All Rights Reserved.</div>
+        <div>ISO 9001:2015 · DEWA & SEWA Compliant · 1,250+ Delivered Sites</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filterProjects(emirate, btn) {
+      document.querySelectorAll('.emirate-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-dossier-card');
+      cards.forEach(card => {
+        if (emirate === 'all' || card.getAttribute('data-emirate') === emirate) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleInspectionDrawer(button) {
+      const card = button.closest('.project-dossier-card');
+      const drawer = card.querySelector('.project-inspection-drawer');
+      if (drawer.style.display === 'block') {
+        drawer.style.display = 'none';
+        button.textContent = 'Inspect Submittal Specs ▾';
+      } else {
+        drawer.style.display = 'block';
+        button.textContent = 'Collapse Technical Specs ▴';
+      }
+    }
+  </script>
+</body>
+</html>

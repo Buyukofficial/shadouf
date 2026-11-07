@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Al Shadouf Group — Sovereign MEP & Building Materials Infrastructure across the UAE. Electrical, solar, piping, lighting, and switchgear.">
+    <title>Al Shadouf Group | Next-Gen MEP Infrastructure — UAE</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .hero {
+        position: relative;
+        padding: 130px 0 90px;
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-left h1 {
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        line-height: 1.08;
+        margin: 20px 0;
+        letter-spacing: -0.035em;
+      }
+      .hero-desc {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 580px;
+        line-height: 1.75;
+        margin-bottom: 36px;
+      }
+      .hero-buttons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 44px;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border-subtle);
+      }
+      .hero-stat-number {
+        font-family: var(--font-display);
+        font-size: 2.1rem;
+        font-weight: 800;
+        color: var(--text-main);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .hero-stat-number span { color: var(--royal-blue); }
+      .hero-stat-label {
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+      .hero-glass-terminal {
+        background: #FFFFFF;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-xl);
+        padding: 30px;
+        box-shadow: 0 12px 36px rgba(6, 106, 171, 0.08);
+        position: relative;
+      }
+      .hero-glass-terminal::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 20%; right: 20%; height: 3px;
+        background: linear-gradient(90deg, transparent, var(--royal-blue), transparent);
+      }
+      .terminal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .terminal-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-display);
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .terminal-bento-mini {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .mini-bento-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 16px;
+        transition: all 0.3s ease;
+      }
+      .mini-bento-card:hover {
+        background: #FFFFFF;
+        border-color: var(--royal-blue);
+        box-shadow: 0 8px 20px rgba(6, 106, 171, 0.12);
+        transform: translateY(-3px);
+      }
+      .hero-thumb-img {
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+        background: #FFFFFF;
+        border: 1px solid var(--border-subtle);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 6px;
+      }
+      .mini-bento-label {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 3px;
+      }
+      .mini-bento-sub {
+        font-size: 0.75rem;
+        color: var(--text-dim);
+      }
+      .brand-card-img {
+        height: 40px;
+        max-width: 120px;
+        object-fit: contain;
+        filter: grayscale(100%) contrast(0.85);
+        opacity: 0.7;
+        transition: all 0.3s;
+      }
+      .brand-card-img:hover {
+        filter: grayscale(0%) contrast(1);
+        opacity: 1;
+        transform: scale(1.08);
+      }
+      .estimator-box {
+        background: #FFFFFF;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-xl);
+        padding: 44px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+      .estimator-box::after {
+        content: '';
+        position: absolute;
+        top: -100px; right: -100px;
+        width: 300px; height: 300px;
+        background: radial-gradient(circle, rgba(6, 106, 171, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .estimator-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .estimator-control { margin-bottom: 26px; }
+      .estimator-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+      .estimator-slider {
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: #E2E8F0;
+        outline: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+      }
+      .estimator-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 22px; height: 22px;
+        border-radius: 50%;
+        background: var(--royal-blue);
+        cursor: pointer;
+        box-shadow: 0 0 12px rgba(6, 106, 171, 0.4);
+      }
+      .estimator-result-card {
+        background: #0A2540;
+        border: 1px solid rgba(6, 106, 171, 0.35);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        text-align: center;
+        box-shadow: 0 14px 40px rgba(10, 37, 64, 0.18);
+        color: #FFFFFF;
+      }
+      .estimator-val-big {
+        font-family: var(--font-display);
+        font-size: 3rem;
+        font-weight: 900;
+        color: #38BDF8;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .project-card {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        position: relative;
+        min-height: 380px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border: 1px solid var(--border-subtle);
+        transition: all 0.35s ease;
+      }
+      .project-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10, 37, 64, 0.2) 0%, rgba(10, 37, 64, 0.92) 100%);
+        z-index: 1;
+      }
+      .project-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--royal-blue);
+        box-shadow: 0 16px 36px rgba(6, 106, 171, 0.15);
+      }
+      .project-card-content { position: relative; z-index: 2; }
+      @media (max-width: 1024px) {
+        .hero-content { grid-template-columns: 1fr; gap: 40px; }
+        .estimator-grid { grid-template-columns: 1fr; }
+        .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <a href="tel:+97165423984">
+                    <span style="color:var(--gold);">📞</span> +971 (06) 542 3984
+                </a>
+                <a href="mailto:contact@alshadouf.com">
+                    <span style="color:var(--cyan);">✉️</span> contact@alshadouf.com
+                </a>
+                <span style="display:flex; align-items:center; gap:6px;">
+                    <span class="live-dot"></span> Central Warehouse: Industrial Area 6, Sharjah
+                </span>
+            </div>
+            <div class="top-bar-right">
+                <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-right:8px;">DEWA · SEWA · Civil Defense Approved</span>
+                <a href="https://wa.me/97165423984" target="_blank" style="color:#25D366;">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FLOATING NAVBAR WITH OFFICIAL REAL LOGO ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" style="display:flex; align-items:center;">
+                <!-- EXACT OFFICIAL AL SHADOUF LOGO ADAPTED FOR LIGHT NAVBAR -->
+                <img src="images/New01shadouf_logo_dark.svg" alt="Al Shadouf Group" class="nav-official-logo">
+            </a>
+
+            <div class="nav-menu" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <a href="products.html" class="nav-link">Products <span style="font-size:0.65rem; opacity:0.6;">▼</span></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="products.html?cat=electrical">⚡ Electrical & Cable Systems</a>
+                        <a href="products.html?cat=lighting">💡 Architectural & LED Lighting</a>
+                        <a href="products.html?cat=plumbing">🔧 Pressure Pipes & Valves</a>
+                        <a href="products.html?cat=solar">☀️ Solar PV & Inverters</a>
+                        <a href="products.html?cat=elv">🔌 ELV & Smart Automation</a>
+                        <a href="products.html?cat=switchgear">⚙️ LV / MV Switchgear</a>
+                    </div>
+                </div>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#quote" class="btn btn-primary btn-sm nav-cta" style="margin-left:8px;">Instant RFQ</a>
+            </div>
+
+            <div class="hamburger" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HIGH-TECH HERO ===== -->
+    <section class="hero">
+        <div class="tech-grid-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="tech-pill fade-in">
+                        <span class="live-dot"></span>
+                        UAE Sovereign MEP Infrastructure · Est. 1995
+                    </div>
+                    <h1 class="fade-in">
+                        Powering The Next Era of <span class="text-gradient">Emirates Infrastructure.</span>
+                    </h1>
+                    <p class="hero-desc fade-in">
+                        Al Shadouf Group is the premier MEP trading and engineering supply powerhouse in the UAE. Supplying mission-critical electrical switchgear, high-efficiency solar arrays, industrial piping, and smart automation to landmark developments.
+                    </p>
+                    <div class="hero-buttons fade-in">
+                        <a href="#quote" class="btn btn-primary btn-lg">
+                            Request Rapid BOQ Quote →
+                        </a>
+                        <a href="#estimator" class="btn btn-outline btn-lg">
+                            ⚡ Launch Project Estimator
+                        </a>
+                    </div>
+                    <div class="hero-stats fade-in">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="28" data-suffix="+">28+</div>
+                            <div class="hero-stat-label">Years of Excellence</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="5000" data-suffix="+">5,000+</div>
+                            <div class="hero-stat-label">Certified SKUs</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="1200" data-suffix="+">1,200+</div>
+                            <div class="hero-stat-label">Delivered Projects</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="100" data-prefix="< " data-suffix="%">100%</div>
+                            <div class="hero-stat-label">UAE Code Compliance</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Live Telemetry Terminal with REAL Product Photos -->
+                <div class="hero-right fade-in">
+                    <div class="hero-glass-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-title">
+                                <span class="live-dot"></span>
+                                LIVE INVENTORY TELEMETRY & SPECIFICATION CORE
+                            </div>
+                            <div style="display:flex; gap:6px;">
+                                <div style="width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.2);"></div>
+                                <div style="width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.2);"></div>
+                                <div style="width:8px; height:8px; border-radius:50%; background:var(--gold);"></div>
+                            </div>
+                        </div>
+
+                        <div class="terminal-bento-mini">
+                            <!-- Real EV Charger Photo -->
+                            <div class="mini-bento-card">
+                                <img src="images/Terra-AC-W22-T-RD-M-0-265x265_c.jpg" alt="ABB Terra EV Charger" class="hero-thumb-img">
+                                <div class="mini-bento-label">ABB Terra EV Chargers</div>
+                                <div class="mini-bento-sub">22kW Smart Fast Stations</div>
+                            </div>
+                            <!-- Real GI Conduit Photo -->
+                            <div class="mini-bento-card">
+                                <img src="images/GImain-265x265_c.png" alt="GI Conduit Systems" class="hero-thumb-img">
+                                <div class="mini-bento-label">GI Conduit & Trays</div>
+                                <div class="mini-bento-sub">BS Class 4 Galvanized</div>
+                            </div>
+                            <!-- Real Drainage Piping Photo -->
+                            <div class="mini-bento-card">
+                                <img src="images/Underground-3-265x265_c.png" alt="Underground Drainage Pipes" class="hero-thumb-img">
+                                <div class="mini-bento-label">Hydro & Drainage</div>
+                                <div class="mini-bento-sub">HDPE & PVC Pressure PN16</div>
+                            </div>
+                            <!-- Real Distribution Enclosures Photo -->
+                            <div class="mini-bento-card">
+                                <img src="images/Metal-Enclosures-Single-Door1-265x265_c.png" alt="Metal Enclosures MDB" class="hero-thumb-img">
+                                <div class="mini-bento-label">Switchgear Enclosures</div>
+                                <div class="mini-bento-sub">Form 2/4 IP65 Assemblies</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:18px; padding:16px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:12px; display:flex; align-items:center; justify-content:space-between;">
+                            <div>
+                                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--royal-blue); font-weight:700; letter-spacing:0.05em;">Dispatch SLA</div>
+                                <div style="font-size:1.05rem; font-weight:800; color:var(--navy);">Same-Day Site Delivery Across UAE</div>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary btn-sm" style="padding:6px 14px; font-size:0.8rem;">Direct Line</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GLOBAL TIER-1 PARTNER BRAND LOGOS (REAL PHOTOS) ===== -->
+    <section style="padding:36px 0; border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); background:var(--bg-surface);">
+        <div class="container">
+            <div style="text-align:center; font-family:var(--font-display); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--text-dim); margin-bottom:24px;">
+                Authorized Supplier For Globally Recognized Engineering Manufacturers
+            </div>
+            <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:36px; padding:8px 0;">
+                <img src="images/Ducab.jpg" alt="Ducab Cables" class="brand-card-img" title="Ducab">
+                <img src="images/3M-LOGO.jpg" alt="3M Electrical" class="brand-card-img" title="3M">
+                <img src="images/panasonic-logo.jpg" alt="Panasonic" class="brand-card-img" title="Panasonic">
+                <img src="images/MK-HONEY-WELL.png" alt="MK Honeywell" class="brand-card-img" title="MK Honeywell">
+                <img src="images/REXTON-1.jpg" alt="Rexton" class="brand-card-img" title="Rexton">
+                <img src="images/furse.jpg" alt="Furse Earthing" class="brand-card-img" title="Furse">
+                <img src="images/MAKITA.png" alt="Makita Tools" class="brand-card-img" title="Makita">
+                <img src="images/VETO.jpg" alt="Veto Switches" class="brand-card-img" title="Veto">
+                <img src="images/Vortice68.png" alt="Vortice Ventilation" class="brand-card-img" title="Vortice">
+                <img src="images/GMSA.png" alt="GMSA" class="brand-card-img" title="GMSA">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENTO GRID: 6 CORE DIVISIONS WITH REAL WAREHOUSE PHOTOS ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="overline">Core System Architecture</div>
+                <h2>Engineered For Mega-Scale Operations</h2>
+                <p>From high-rise towers in Downtown Dubai to sovereign industrial zones in Sharjah and Abu Dhabi, explore our synchronized MEP divisions.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- 1. Electrical -->
+                <div class="bento-card fade-in">
+                    <div>
+                        <div style="height:140px; border-radius:12px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-subtle);">
+                            <img src="images/slider01-370x200_c.jpg" alt="Electrical Warehouse" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="tech-pill" style="margin-bottom:12px; font-size:0.7rem; padding:3px 10px;">Primary Power</div>
+                        <h3>Electrical & Cable Management</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+                            Complete GI cable containment, heavy-duty perforated trays, return-flange trunking, armored XLPE cables, earthing grids, and lightning protection systems.
+                        </p>
+                    </div>
+                    <a href="products.html?cat=electrical" class="btn btn-outline btn-sm">Explore Cable Systems →</a>
+                </div>
+
+                <!-- 2. Solar & Renewables -->
+                <div class="bento-card fade-in">
+                    <div>
+                        <div style="height:140px; border-radius:12px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-subtle); background:#F8FAFC; display:flex; align-items:center; justify-content:center;">
+                            <img src="images/Terra-AC-W11-G5-R-0-265x265_c.png" alt="Solar & EV Tech" style="height:110px; width:auto; object-fit:contain;">
+                        </div>
+                        <div class="tech-pill" style="margin-bottom:12px; font-size:0.7rem; padding:3px 10px; border-color:rgba(16,185,129,0.3); color:#34D399;">Clean Grid</div>
+                        <h3>Solar PV & Renewable Systems</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+                            High-efficiency monocrystalline Tier-1 solar modules, commercial hybrid string inverters, anodized aerodynamic rooftop racking, and EV chargers.
+                        </p>
+                    </div>
+                    <a href="products.html?cat=solar" class="btn btn-outline btn-sm">Explore Solar Solutions →</a>
+                </div>
+
+                <!-- 3. Sanitary & Piping -->
+                <div class="bento-card fade-in">
+                    <div>
+                        <div style="height:140px; border-radius:12px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-subtle);">
+                            <img src="images/slide03-370x200_c.jpg" alt="Plumbing Warehouse" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="tech-pill" style="margin-bottom:12px; font-size:0.7rem; padding:3px 10px; border-color:rgba(6,182,212,0.3); color:var(--cyan-light);">Hydro Dynamics</div>
+                        <h3>Pressure Pipes & Drainage</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+                            DIN/BS standard PVC-U pressure pipes, electrofusion HDPE, PPR hot/cold water plumbing, stainless floor traps, motorized and lockable gate/ball valves.
+                        </p>
+                    </div>
+                    <a href="products.html?cat=plumbing" class="btn btn-outline btn-sm">Explore Piping Systems →</a>
+                </div>
+
+                <!-- 4. Lighting -->
+                <div class="bento-card fade-in">
+                    <div>
+                        <div style="height:140px; border-radius:12px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-subtle);">
+                            <img src="images/slide05-370x200_c.png" alt="Lighting Systems" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="tech-pill" style="margin-bottom:12px; font-size:0.7rem; padding:3px 10px;">Photonics</div>
+                        <h3>Architectural & Industrial Lighting</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+                            High-lumen optical LED high-bays for logistics hubs, anti-glare micro-prismatic office panels, IP67 marine floodlights, and autonomous solar streetlights.
+                        </p>
+                    </div>
+                    <a href="products.html?cat=lighting" class="btn btn-outline btn-sm">Explore Lighting Systems →</a>
+                </div>
+
+                <!-- 5. ELV & Automation -->
+                <div class="bento-card fade-in">
+                    <div>
+                        <div style="height:140px; border-radius:12px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-subtle); background:#F8FAFC; display:flex; align-items:center; justify-content:center;">
+                            <img src="images/TERMINAL-BOXES3-265x265_c.png" alt="Terminal Junction Enclosures" style="height:110px; width:auto; object-fit:contain;">
+                        </div>
+                        <div class="tech-pill" style="margin-bottom:12px; font-size:0.7rem; padding:3px 10px;">Smart Core</div>
+                        <h3>ELV & Building Automation</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+                            Cat6A/Cat7 structured fiber cabling, BMS sensors, automated HVAC actuators, server racks, biometric access hardware, and integrated intercom networks.
+                        </p>
+                    </div>
+                    <a href="products.html?cat=elv" class="btn btn-outline btn-sm">Explore ELV Architecture →</a>
+                </div>
+
+                <!-- 6. Switchgear -->
+                <div class="bento-card fade-in">
+                    <div>
+                        <div style="height:140px; border-radius:12px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-subtle); background:#F8FAFC; display:flex; align-items:center; justify-content:center;">
+                            <img src="images/Metal-Enclosures-Single-Door1-265x265_c.png" alt="MDB Switchgear Enclosures" style="height:110px; width:auto; object-fit:contain;">
+                        </div>
+                        <div class="tech-pill" style="margin-bottom:12px; font-size:0.7rem; padding:3px 10px;">Distribution</div>
+                        <h3>Switchgear & Panel Assembly</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+                            Main Distribution Boards (MDB), Sub-Distribution Boards (SMDB), DBs, certified ACB/MCCB protection, contactors, capacitor banks, and transfer switches.
+                        </p>
+                    </div>
+                    <a href="products.html?cat=switchgear" class="btn btn-outline btn-sm">Explore Switchgear Panels →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTERACTIVE PROJECT BOQ ESTIMATOR MATRIX ===== -->
+    <section class="section" id="estimator" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="overline">Engineering Intelligence</div>
+                <h2>Instant Project Spec & BOQ Calculator</h2>
+                <p>Simulate your project requirements in real-time. Calculate estimated power capacity, containment size, and solar offset for fast procurement scheduling.</p>
+            </div>
+
+            <div class="estimator-box fade-in">
+                <div class="estimator-grid">
+                    <div class="estimator-controls">
+                        <!-- Project Sector -->
+                        <div class="estimator-control">
+                            <div class="estimator-label">
+                                <span>Project Typology</span>
+                                <span style="color:var(--gold); font-size:0.85rem;" id="typologyLabel">Commercial High-Rise</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;">
+                                <button class="btn btn-outline btn-sm active-type" onclick="setType('commercial', 'Commercial High-Rise', this)" style="border-color:var(--gold); background:rgba(245,158,11,0.1);">Commercial</button>
+                                <button class="btn btn-outline btn-sm" onclick="setType('residential', 'Luxury Villa Compound', this)">Residential</button>
+                                <button class="btn btn-outline btn-sm" onclick="setType('industrial', 'Logistics / Industrial', this)">Industrial</button>
+                                <button class="btn btn-outline btn-sm" onclick="setType('hospitality', '5-Star Hospitality', this)">Hospitality</button>
+                            </div>
+                        </div>
+
+                        <!-- Area Slider -->
+                        <div class="estimator-control">
+                            <div class="estimator-label">
+                                <span>Built-Up Area (BUA)</span>
+                                <span style="color:var(--gold-light); font-family:var(--font-display); font-weight:700;" id="areaValueDisplay">85,000 SQ FT</span>
+                            </div>
+                            <input type="range" class="estimator-slider" id="areaSlider" min="5000" max="300000" step="5000" value="85000" oninput="calculateEstimates()">
+                            <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-dim); margin-top:6px;">
+                                <span>5,000 sq ft</span>
+                                <span>150,000 sq ft</span>
+                                <span>300,000+ sq ft</span>
+                            </div>
+                        </div>
+
+                        <!-- System Checkboxes -->
+                        <div class="estimator-control">
+                            <div class="estimator-label">
+                                <span>Required Package Disciplines</span>
+                                <span style="color:var(--text-dim); font-size:0.8rem;">Select all that apply</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; font-size:0.85rem;">
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked id="chkPower" onchange="calculateEstimates()"> Electrical LV/MV</label>
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked id="chkPipes" onchange="calculateEstimates()"> Hydro & Piping</label>
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked id="chkSolar" onchange="calculateEstimates()"> Solar PV Offset</label>
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked id="chkLight" onchange="calculateEstimates()"> High-Lumen LED</label>
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked id="chkElv" onchange="calculateEstimates()"> ELV Automation</label>
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked id="chkSwitch" onchange="calculateEstimates()"> Switchgear MDB</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Telemetry Card -->
+                    <div class="estimator-result-card">
+                        <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; margin-bottom:12px;">
+                            Estimated System Capacity
+                        </div>
+                        <div class="estimator-val-big" id="powerEstDisplay">680 kVA</div>
+                        <div style="font-size:0.9rem; color:var(--text-muted); margin-bottom:24px;">Recommended Transformer / Main Incomer</div>
+
+                        <div style="border-top:1px solid var(--border-subtle); padding-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px; text-align:left; font-size:0.82rem; margin-bottom:24px;">
+                            <div>
+                                <div style="color:var(--text-dim);">Solar Potential:</div>
+                                <div style="font-weight:700; color:var(--emerald-live);" id="solarEstDisplay">145 kWp (~35% Offset)</div>
+                            </div>
+                            <div>
+                                <div style="color:var(--text-dim);">Cable Tray Gauge:</div>
+                                <div style="font-weight:700; color:var(--text-main);" id="trayEstDisplay">300mm HDG Flange</div>
+                            </div>
+                            <div>
+                                <div style="color:var(--text-dim);">Piping Main Inflow:</div>
+                                <div style="font-weight:700; color:var(--text-main);" id="pipeEstDisplay">110mm HDPE PN16</div>
+                            </div>
+                            <div>
+                                <div style="color:var(--text-dim);">Estimated Dispatch:</div>
+                                <div style="font-weight:700; color:var(--gold-light);">24-48 Working Hours</div>
+                            </div>
+                        </div>
+
+                        <button onclick="openRfqWithEstimates()" class="btn btn-primary btn-lg" style="width:100%;">
+                            Lock In Estimate & Request BOQ →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROVEN MEGA-DEVELOPMENTS PORTFOLIO ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="overline">Proven Track Record</div>
+                <h2>Milestone UAE Infrastructure Delivered</h2>
+                <p>Over 1,200 commercial towers, industrial hubs, luxury villa communities, and public infrastructure powered by Al Shadouf engineering materials.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+                <!-- Project 1 -->
+                <div class="project-card fade-in" style="background:linear-gradient(135deg, #0A2540, #0F467E); color:#FFFFFF;">
+                    <div class="project-card-content">
+                        <span class="tech-pill" style="margin-bottom:12px; background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.25);">Commercial · Dubai</span>
+                        <h3 style="color:#FFFFFF;">Business Bay Signature Tower</h3>
+                        <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin-top:6px;">45-Floor High-Rise: Full Schneider switchgear integration, Ducab fire-rated containment, and central LED panel arrays.</p>
+                        <div style="display:flex; justify-content:space-between; margin-top:16px; font-size:0.82rem; color:#38BDF8; font-weight:700;">
+                            <span>Valuation: AED 8.5M</span>
+                            <span>Status: Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in" style="background:linear-gradient(135deg, #064E3B, #0F766E); color:#FFFFFF;">
+                    <div class="project-card-content">
+                        <span class="tech-pill" style="margin-bottom:12px; background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.25);">Residential · Dubai</span>
+                        <h3 style="color:#FFFFFF;">Arabian Ranches Luxury Villa Phase</h3>
+                        <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin-top:6px;">120 Luxury Villas: Complete PEX/PPR plumbing networks, Hager DB panels, and integrated rooftop solar systems.</p>
+                        <div style="display:flex; justify-content:space-between; margin-top:16px; font-size:0.82rem; color:#6EE7B7; font-weight:700;">
+                            <span>Valuation: AED 6.1M</span>
+                            <span>Status: Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in" style="background:linear-gradient(135deg, #1E1B4B, #312E81); color:#FFFFFF;">
+                    <div class="project-card-content">
+                        <span class="tech-pill" style="margin-bottom:12px; background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.25);">Logistics · JAFZA</span>
+                        <h3 style="color:#FFFFFF;">Jebel Ali Freezone Megaplex</h3>
+                        <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin-top:6px;">Heavy-duty industrial optical lighting, 2000A busbar systems, and high-pressure drainage for 400,000 sq ft logistics facility.</p>
+                        <div style="display:flex; justify-content:space-between; margin-top:16px; font-size:0.82rem; color:#A78BFA; font-weight:700;">
+                            <span>Valuation: AED 5.3M</span>
+                            <span>Status: Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a href="projects.html" class="btn btn-outline">Explore Full Project Registry (1,200+) →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CALL TO ACTION ===== -->
+    <section class="section">
+        <div class="container">
+            <div style="background:linear-gradient(135deg, #0A2540 0%, #066AAB 100%); border:1px solid rgba(6,106,171,0.4); border-radius:var(--radius-xl); padding:64px 40px; text-align:center; position:relative; overflow:hidden; box-shadow:0 15px 45px rgba(6,106,171,0.2); color:#FFFFFF;" class="fade-in">
+                <div class="tech-pill" style="margin-bottom:16px; background:rgba(255,255,255,0.15); color:#FFFFFF; border-color:rgba(255,255,255,0.3);">
+                    <span class="live-dot"></span> Rapid Estimations & Same-Day Dispatch
+                </div>
+                <h2 style="font-size:clamp(2rem, 4vw, 3.2rem); margin-bottom:16px; color:#FFFFFF;">
+                    Ready To Equip Your Next Mega Project?
+                </h2>
+                <p style="max-width:640px; margin:0 auto 36px; color:rgba(255,255,255,0.9); font-size:1.1rem;">
+                    Upload your BOQ or material specifications today. Our senior technical sales engineers deliver comprehensive competitive proposals within 4 working hours.
+                </p>
+                <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                    <a href="#quote" class="btn btn-primary btn-lg" style="background:#FFFFFF; color:var(--royal-blue); border-color:#FFFFFF;">Submit BOQ For Instant Pricing →</a>
+                    <a href="tel:+97165423984" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.6); color:#FFFFFF;">Call Engineering Desk (+971 6 542 3984)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ULTRA-DARK FOOTER WITH OFFICIAL LOGO ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <!-- EXACT OFFICIAL AL SHADOUF LOGO -->
+                    <img src="images/New01shadouf_logo02.svg" alt="Al Shadouf Group" class="footer-official-logo">
+                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:24px;">
+                        The UAE's premier sovereign MEP and building materials trading powerhouse since 1995. Supplying landmark infrastructure projects with certified engineering solutions.
+                    </p>
+                    <div style="display:flex; gap:12px;">
+                        <a href="https://wa.me/97165423984" target="_blank" style="padding:8px 16px; background:rgba(37,211,102,0.15); border:1px solid rgba(37,211,102,0.3); border-radius:50px; color:#25D366; font-size:0.85rem; font-weight:700;">WhatsApp Direct Desk</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Divisions</h4>
+                    <a href="products.html?cat=electrical">Electrical Cable Trays</a>
+                    <a href="products.html?cat=solar">Solar Energy PV</a>
+                    <a href="products.html?cat=plumbing">HDPE & PPR Piping</a>
+                    <a href="products.html?cat=switchgear">ABB / Schneider Panels</a>
+                    <a href="products.html?cat=lighting">Industrial Optics & LED</a>
+                    <a href="products.html?cat=elv">ELV & Automation</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">Our Heritage (1995)</a>
+                    <a href="projects.html">Project Registry</a>
+                    <a href="services.html">Services & Logistics</a>
+                    <a href="contact.html">Sharjah Showroom</a>
+                    <a href="contact.html">Tenders & RFQ</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Direct Contact</h4>
+                    <a href="tel:+97165423984">+971 (06) 542 3984</a>
+                    <a href="mailto:contact@alshadouf.com">contact@alshadouf.com</a>
+                    <a href="#">Industrial Area - 06, Sharjah, UAE</a>
+                    <a href="#">Mon – Sat: 7:30 AM – 6:00 PM</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Al Shadouf Electrical Ware Co. LLC. All Rights Reserved.</div>
+                <div style="display:flex; gap:20px;">
+                    <a href="#">ISO 9001:2015 Certified</a>
+                    <a href="#">DEWA Compliant</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ESTIMATOR SCRIPT ===== -->
+    <script>
+        let currentType = 'commercial';
+        let currentTypeName = 'Commercial High-Rise';
+
+        function setType(type, name, btn) {
+            currentType = type;
+            currentTypeName = name;
+            document.querySelectorAll('.estimator-control button').forEach(b => {
+                b.style.borderColor = 'var(--border-subtle)';
+                b.style.background = '#FFFFFF';
+                b.style.color = 'var(--text-main)';
+            });
+            btn.style.borderColor = 'var(--royal-blue)';
+            btn.style.background = '#EFF6FF';
+            btn.style.color = 'var(--royal-blue)';
+            document.getElementById('typologyLabel').textContent = name;
+            calculateEstimates();
+        }
+
+        function calculateEstimates() {
+            const area = parseInt(document.getElementById('areaSlider').value);
+            document.getElementById('areaValueDisplay').textContent = area.toLocaleString() + ' SQ FT';
+
+            let factor = 0.008;
+            if (currentType === 'commercial') factor = 0.008;
+            if (currentType === 'residential') factor = 0.005;
+            if (currentType === 'industrial') factor = 0.012;
+            if (currentType === 'hospitality') factor = 0.010;
+
+            const kva = Math.round(area * factor);
+            document.getElementById('powerEstDisplay').textContent = kva.toLocaleString() + ' kVA';
+
+            const solarKwp = Math.round((area * 0.4) / 100);
+            document.getElementById('solarEstDisplay').textContent = solarKwp + ' kWp (~35% Offset)';
+
+            let tray = '200mm HDG Flange';
+            let pipe = '75mm PPR PN20';
+            if (area > 50000) { tray = '300mm HDG Flange'; pipe = '110mm HDPE PN16'; }
+            if (area > 150000) { tray = '450mm HDG Heavy-Duty'; pipe = '160mm HDPE PN16'; }
+            document.getElementById('trayEstDisplay').textContent = tray;
+            document.getElementById('pipeEstDisplay').textContent = pipe;
+        }
+
+        function openRfqWithEstimates() {
+            const area = document.getElementById('areaSlider').value;
+            const kva = document.getElementById('powerEstDisplay').textContent;
+            const modal = document.getElementById('globalRfqModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                const textarea = modal.querySelector('textarea');
+                if (textarea) {
+                    textarea.value = `Project Type: ${currentTypeName}\nBuilt-Up Area: ${parseInt(area).toLocaleString()} sq ft\nEstimated Load: ${kva}\nPlease provide official BOQ quotation and material dispatch timeframe.`;
+                }
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

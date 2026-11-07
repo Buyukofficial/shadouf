@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Al Shadouf Group: 24/7 engineering command center, live Sharjah warehouse dispatch status, smart 2-step RFQ wizard, and heavy truck logistics directions.">
+  <title>Engineering Command Center & Rapid RFQ Desk | Al Shadouf Group — UAE</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* TOTALLY UNIQUE CONTACT PAGE OPENING: 24/7 OPERATIONS ROOM */
+    .contact-command-hero {
+      padding-top: 100px;
+      padding-bottom: 50px;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05), transparent 50%),
+                  radial-gradient(circle at 20% 80%, rgba(6, 106, 171, 0.05), transparent 50%),
+                  #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+    .ops-live-telemetry-bar {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 22px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      color: var(--navy);
+    }
+    .status-beacon-live {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--emerald-live);
+      box-shadow: 0 0 16px var(--emerald-live);
+      animation: pulseGreen 1.8s infinite;
+      display: inline-block;
+    }
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .contact-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .contact-hero-grid { grid-template-columns: 1fr; }
+    }
+    .contact-hero-title {
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .dual-action-station {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .action-station-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .action-station-card:hover {
+      border-color: var(--royal-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6, 106, 171, 0.1);
+    }
+
+    /* 2-Step RFQ Wizard */
+    .rfq-wizard-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: 0 12px 35px rgba(6, 106, 171, 0.08);
+    }
+    .wizard-steps-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .wizard-steps-header::after {
+      content: '';
+      position: absolute;
+      top: 20px; left: 15%; right: 15%; height: 2px;
+      background: var(--border-subtle);
+      z-index: 1;
+    }
+    .wizard-step-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+    }
+    .wizard-step-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #F8FAFC;
+      border: 2px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: var(--text-muted);
+      transition: all 0.3s;
+    }
+    .wizard-step-indicator.active .wizard-step-circle {
+      border-color: var(--royal-blue);
+      background: var(--royal-blue);
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(6, 106, 171, 0.25);
+    }
+    .wizard-step-indicator.completed .wizard-step-circle {
+      border-color: var(--emerald-live);
+      background: var(--emerald-live);
+      color: #FFFFFF;
+    }
+    .wizard-step-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group-custom {
+      margin-bottom: 20px;
+    }
+    .form-group-custom label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .form-input-custom {
+      width: 100%;
+      padding: 14px 18px;
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .form-input-custom:focus {
+      border-color: var(--royal-blue);
+      background: #FFFFFF;
+      box-shadow: 0 0 12px rgba(6, 106, 171, 0.2);
+    }
+
+    .discipline-chip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) {
+      .discipline-chip-grid { grid-template-columns: 1fr; }
+    }
+    .discipline-chip {
+      padding: 14px;
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .discipline-chip:hover {
+      background: #FFFFFF;
+      border-color: var(--royal-blue);
+      color: var(--navy);
+    }
+    .discipline-chip.selected {
+      background: #EFF6FF;
+      border-color: var(--royal-blue);
+      color: var(--royal-blue);
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(6, 106, 171, 0.15);
+    }
+
+    /* Department Extensions */
+    .dept-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .dept-card:hover {
+      border-color: var(--royal-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(6, 106, 171, 0.1);
+    }
+
+    /* Truck Routing */
+    .truck-route-box {
+      background: #0A2540;
+      border: 1px solid rgba(6, 106, 171, 0.4);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      color: #FFFFFF;
+      box-shadow: 0 14px 40px rgba(10, 37, 64, 0.18);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+97165423984"><span style="color:var(--gold);">📞</span> +971 (06) 542 3984</a>
+        <a href="mailto:contact@alshadouf.com"><span style="color:var(--cyan);">✉️</span> contact@alshadouf.com</a>
+        <span>Industrial Area - 06, Sharjah, UAE</span>
+      </div>
+      <div class="top-bar-right">
+        <span>Sub-4-Hour SLA For Tender Estimations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar: Standalone Exact Official Logo -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" style="display:flex; align-items:center;">
+        <img src="images/New01shadouf_logo_dark.svg" alt="Al Shadouf Group" class="nav-official-logo">
+      </a>
+
+      <div class="nav-menu" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-link">Products <span style="font-size:0.65rem; opacity:0.6;">▼</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="products.html?cat=electrical">⚡ Electrical & Cable Systems</a>
+            <a href="products.html?cat=switchgear">⚙️ Switchgear & Enclosures</a>
+            <a href="products.html?cat=solar">☀️ Solar PV & EV Charging</a>
+            <a href="products.html?cat=plumbing">🔧 Drainage & Hydro Piping</a>
+            <a href="products.html?cat=lighting">💡 Architectural & LED Lighting</a>
+            <a href="products.html?cat=earthing">⚡ Earthing & Lightning Bars</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="#quote" class="btn btn-primary btn-sm nav-cta">Instant RFQ</a>
+      </div>
+
+      <div class="hamburger" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TOTALLY UNIQUE HERO: 24/7 OPERATIONS ROOM -->
+  <section class="contact-command-hero">
+    <div class="container">
+      
+      <!-- Operations Live Telemetry Bar -->
+      <div class="ops-live-telemetry-bar fade-in">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="status-beacon-live" id="yardBeacon"></span>
+          <span style="font-weight:700; color:var(--navy);" id="yardStatusText">🟢 WAREHOUSE DISPATCH ACTIVE · Overhead Cranes Loading</span>
+        </div>
+        <div>
+          <span style="color:var(--text-dim); text-transform:uppercase;">UAE GST: </span>
+          <span style="font-family:var(--font-mono); color:var(--royal-blue); font-weight:700;" id="uaeClock">12:00:00 GST</span>
+        </div>
+        <div>
+          <span style="color:var(--text-dim); text-transform:uppercase;">Next Batch: </span>
+          <span style="font-weight:700; color:var(--sky-blue);" id="nextDeparture">In 25 Mins</span>
+        </div>
+        <div>
+          <a href="tel:+97165423984" style="color:var(--royal-blue); font-weight:700;">Hotline: +971 (06) 542 3984</a>
+        </div>
+      </div>
+
+      <div class="contact-hero-grid fade-in">
+        
+        <!-- Left Hero Content -->
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="tech-pill" style="border-color:rgba(6,106,171,0.3); color:var(--royal-blue);">ENGINEERING COMMAND</span>
+            <span style="font-size:0.8rem; color:var(--text-dim);">Sharjah Industrial Area 6</span>
+          </div>
+
+          <h1 class="contact-hero-title">
+            Engineering Command & <span class="text-gradient">Rapid Dispatch.</span>
+          </h1>
+
+          <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin-bottom:24px;">
+            Connect directly with licensed estimating engineers, schedule heavy trailer loading at our Sharjah staging depot, or submit complex multi-discipline BOQ documents for official quotation within 4 hours.
+          </p>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="#wizard" class="btn btn-primary btn-sm">Launch Smart RFQ Wizard 🚀</a>
+            <a href="tel:+97165423984" class="btn btn-outline btn-sm">Direct Phone: +971 6 542 3984</a>
+          </div>
+        </div>
+
+        <!-- Right Dual Action Station -->
+        <div class="dual-action-station">
+          <div class="action-station-card">
+            <div style="font-size:2.2rem; color:var(--royal-blue);">⚡</div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:4px;">Tender Estimation Desk</h3>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin:0;">Guaranteed sub-4-hour official priced submittal packs with original manufacturer datasheets.</p>
+            </div>
+          </div>
+
+          <div class="action-station-card" style="border-color:rgba(16, 185, 129, 0.4);">
+            <div style="font-size:2.2rem; color:var(--emerald-live);">🚨</div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:4px;">24/7 Site Emergency Shutdown</h3>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin:0;">Urgent circuit breaker, cable joint, or valve burst site hot-shot delivery across Dubai & Sharjah.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: 2-STEP SMART RFQ WIZARD -->
+  <section class="section" id="wizard" style="padding-top:40px;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Rapid Estimation Engine</div>
+        <h2>Request Formal Material Quotation (RFQ)</h2>
+        <p style="color:var(--text-muted); max-width:650px; margin:0 auto;">Complete 2 quick steps to receive an official Al Shadouf priced tender pack with guaranteed mill test traceability.</p>
+      </div>
+
+      <div class="rfq-wizard-card fade-in" style="max-width:840px; margin:0 auto;">
+        
+        <!-- Step Indicators -->
+        <div class="wizard-steps-header">
+          <div class="wizard-step-indicator active" id="indStep1">
+            <div class="wizard-step-circle">1</div>
+            <div class="wizard-step-label">Scope & Location</div>
+          </div>
+          <div class="wizard-step-indicator" id="indStep2">
+            <div class="wizard-step-circle">2</div>
+            <div class="wizard-step-label">BOQ & Contact</div>
+          </div>
+          <div class="wizard-step-indicator" id="indStep3">
+            <div class="wizard-step-circle">✓</div>
+            <div class="wizard-step-label">Official Token</div>
+          </div>
+        </div>
+
+        <form id="wizardForm" onsubmit="handleWizardSubmit(event)">
+
+          <!-- STEP 1: SCOPE & TIMELINE -->
+          <div id="step1Container">
+            <h3 style="font-size:1.25rem; margin-bottom:12px; color:var(--navy);">Select MEP Discipline(s):</h3>
+            
+            <div class="discipline-chip-grid">
+              <div class="discipline-chip selected" onclick="toggleChip(this, 'Electrical & Power Cables')">⚡ Electrical & Cables</div>
+              <div class="discipline-chip" onclick="toggleChip(this, 'Cable Trays & Conduits')">🏗️ GI Containment & Trays</div>
+              <div class="discipline-chip" onclick="toggleChip(this, 'Switchgear & MDB')">⚙️ Switchgear & Enclosures</div>
+              <div class="discipline-chip" onclick="toggleChip(this, 'Solar PV & EV Charger')">☀️ Solar PV & EV Charging</div>
+              <div class="discipline-chip" onclick="toggleChip(this, 'HDPE & Drainage Pipes')">🔧 Drainage & Hydro Piping</div>
+              <div class="discipline-chip" onclick="toggleChip(this, 'Earthing & Lightning')">⚡ Furse Earthing & Grounding</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
+              <div class="form-group-custom">
+                <label>Project Delivery Emirate:</label>
+                <select class="form-input-custom" id="wizEmirate">
+                  <option value="Dubai">Dubai (Downtown / Business Bay / DWC / JAFZA)</option>
+                  <option value="Sharjah" selected>Sharjah (Industrial / Airport Freezone / City)</option>
+                  <option value="Abu Dhabi">Abu Dhabi (ICAD / Musaffah / Khalifa City)</option>
+                  <option value="Ajman">Ajman</option>
+                  <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                  <option value="Fujairah">Fujairah</option>
+                  <option value="Umm Al Quwain">Umm Al Quwain</option>
+                </select>
+              </div>
+
+              <div class="form-group-custom">
+                <label>Required Dispatch Urgency:</label>
+                <select class="form-input-custom" id="wizUrgency">
+                  <option value="Emergency 24-Hour">Immediate Hot-Shot (Within 24 Hours)</option>
+                  <option value="Standard 2-3 Days" selected>Standard Site Delivery (2 - 3 Days)</option>
+                  <option value="Tender Budgetary">Tender Pricing / Future Milestone</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end;">
+              <button type="button" class="btn btn-primary" onclick="goToStep(2)">Proceed to Step 2: BOQ & Details →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: BOQ & CONTACT -->
+          <div id="step2Container" style="display:none;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+              <div class="form-group-custom">
+                <label>Engineer / Commercial Officer Name *</label>
+                <input type="text" class="form-input-custom" id="wizName" required placeholder="Eng. Ahmed Mansoor">
+              </div>
+              <div class="form-group-custom">
+                <label>Contracting Firm / Company *</label>
+                <input type="text" class="form-input-custom" id="wizCompany" required placeholder="Arabtec MEP LLC">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+              <div class="form-group-custom">
+                <label>Direct Phone / WhatsApp *</label>
+                <input type="tel" class="form-input-custom" id="wizPhone" required placeholder="+971 50 123 4567">
+              </div>
+              <div class="form-group-custom">
+                <label>Corporate Email *</label>
+                <input type="email" class="form-input-custom" id="wizEmail" required placeholder="estimates@company.ae">
+              </div>
+            </div>
+
+            <div class="form-group-custom">
+              <label>Bill of Quantities (BOQ), Cable Cross-Sections or Required Quantities:</label>
+              <textarea class="form-input-custom" id="wizBOQ" rows="4" placeholder="Example: 4C x 240mm² Ducab XLPE (1,200m), 300x50mm HDG Cable Trays (600m), ABB 22kW Wallbox (4 units)..."></textarea>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="goToStep(1)">← Back to Scope</button>
+              <button type="submit" class="btn btn-primary">Generate Official RFQ & Dispatch 🚀</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: SUBMISSION CONFIRMATION -->
+          <div id="step3Container" style="display:none; text-align:center; padding:32px 16px;">
+            <div style="font-size:3.5rem; margin-bottom:16px;">🎉</div>
+            <span class="tech-pill" style="border-color:rgba(6,106,171,0.3); color:var(--royal-blue); margin-bottom:12px;" id="confTokenPill">TOKEN: AS-RFQ-2026-8841</span>
+            <h2 style="font-size:1.8rem; margin:12px 0; color:var(--navy);">RFQ Successfully Logged in Central System!</h2>
+            <p style="color:var(--text-muted); max-width:550px; margin:0 auto 28px; line-height:1.7;">
+              Your inquiry has been allocated to our Senior MEP Estimation Engineer. An official priced quotation with manufacturer datasheets is being prepared.
+            </p>
+
+            <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+              <button type="button" class="btn btn-primary" onclick="openWhatsAppConfirmation()">📱 Open Direct in WhatsApp (+971 6 542 3984)</button>
+              <button type="button" class="btn btn-outline" onclick="resetWizard()">Log Another RFQ</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: DEPARTMENT DIRECT ROUTING EXTENSIONS -->
+  <section class="section-sm" style="background:var(--bg-surface); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="overline">Sharjah Headquarters Direct Lines</div>
+        <h2>Departmental Extension Directory</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;" class="fade-in">
+        
+        <div class="dept-card">
+          <div>
+            <div style="font-size:1.8rem; margin-bottom:10px;">📊</div>
+            <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--navy);">Tenders & Estimations</h4>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              Rapid pricing for active BOQs, tender packages, and bill of materials calculation.
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle); padding-top:12px; font-size:0.8rem;">
+            <a href="tel:+97165423984" style="color:var(--royal-blue); font-weight:700;">+971 (06) 542 3984 Ext. 101</a>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div>
+            <div style="font-size:1.8rem; margin-bottom:10px;">⚙️</div>
+            <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--navy);">Switchgear Engineering</h4>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              Form 4 panel approvals, single-line diagrams, relay coordination, and FAT witness testing.
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle); padding-top:12px; font-size:0.8rem;">
+            <a href="mailto:contact@alshadouf.com?subject=Switchgear%20Inquiry" style="color:var(--royal-blue); font-weight:700;">switchgear@alshadouf.com</a>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div>
+            <div style="font-size:1.8rem; margin-bottom:10px;">🚛</div>
+            <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--navy);">Yard Logistics & Fleet</h4>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              Gate entry clearance, flatbed truck scheduling, driver coordination, and emergency hot-shots.
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle); padding-top:12px; font-size:0.8rem;">
+            <span style="color:var(--emerald-live); font-weight:700;">Gate 2 Overhead Crane Depot</span>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div>
+            <div style="font-size:1.8rem; margin-bottom:10px;">💳</div>
+            <h4 style="font-size:1.05rem; margin-bottom:6px; color:var(--navy);">Corporate Credit & LC</h4>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">
+              30-90 day contractor credit facilities, Bank Letter of Credit (LC) approvals, and PDC accounts.
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle); padding-top:12px; font-size:0.8rem;">
+            <a href="mailto:contact@alshadouf.com?subject=Credit%20Facility%20Request" style="color:var(--royal-blue); font-weight:700;">finance@alshadouf.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWN SECTION: HEAVY TRUCK ROUTING & FACILITY NAVIGATION -->
+  <section class="section">
+    <div class="container">
+      <div class="truck-route-box fade-in">
+        <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:36px; align-items:center;">
+          
+          <div>
+            <span class="tech-pill" style="border-color:rgba(255,255,255,0.3); color:#FFFFFF; margin-bottom:12px; background:rgba(255,255,255,0.1);">HEAVY VEHICLE LOGISTICS PROTOCOL</span>
+            <h3 style="font-size:1.7rem; color:#FFFFFF; margin-bottom:12px;">Flatbed Trailer Access & Crane Staging</h3>
+            <p style="color:rgba(255,255,255,0.85); font-size:0.92rem; line-height:1.7; margin-bottom:20px;">
+              Al Shadouf Central Yard is engineered to accept up to 40-foot articulated tractor-trailers. All incoming freight vehicles must enter via Industrial Area 6, Gate 2.
+            </p>
+
+            <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:var(--radius-md); padding:16px; margin-bottom:20px; font-size:0.88rem; color:rgba(255,255,255,0.9); line-height:1.7;">
+              <strong style="color:#38BDF8;">Turn-by-Turn GPS Guidance:</strong><br>
+              • From E311 (Sheikh Mohammed Bin Zayed): Take Sharjah Industrial Area 6 Exit 64 ──> Follow Street 17 ──> Al Shadouf Heavy Staging Depot.<br>
+              • From E611 (Emirates Road): Take Maliha Road Exit ──> Proceed west to Industrial Area 6.<br>
+              • Crane Clearance: Minimum 4.8m overhead clearance across yard bays.
+            </div>
+
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <a href="https://maps.google.com/?q=Sharjah+Industrial+Area+6+Al+Shadouf" target="_blank" class="btn btn-primary btn-sm" style="background:#FFFFFF; color:var(--royal-blue); border-color:#FFFFFF;">Open in Google Maps (GPS) 📍</a>
+              <a href="tel:+97165423984" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.5); color:#FFFFFF;">Yard Gate Dispatch Phone</a>
+            </div>
+          </div>
+
+          <!-- Real Facility Photo -->
+          <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-subtle);">
+            <img src="images/slider01-370x200_c.jpg" alt="Al Shadouf Sharjah Warehouse Facility" style="width:100%; height:260px; object-fit:cover; display:block;">
+            <div style="background:#071A2E; padding:16px; font-size:0.8rem; color:rgba(255,255,255,0.7); text-align:center;">
+              Sharjah Industrial Area 6 · Coordinates: 25.3090° N, 55.4050° E
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: Standalone Exact Official Logo -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; margin-bottom:16px;">
+            <img src="images/New01shadouf_logo02.svg" alt="Al Shadouf Group" class="nav-official-logo">
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.7;">
+            Sovereign MEP infrastructure trading group headquartered in Sharjah, UAE. Direct authorized distributor for Ducab, 3M, MK Honeywell, Furse, and Schneider Electric.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Product Catalog</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+        </div>
+        <div class="footer-col">
+          <h4>Operating Hours</h4>
+          <a href="#">Mon - Sat: 07:30 - 19:30</a>
+          <a href="#">Sunday: Emergency Hotline Only</a>
+          <a href="#">24/7 Rapid Hot-Shot Fleet</a>
+          <a href="#">Sub-4-Hour Tender SLA</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Desk</h4>
+          <a href="tel:+97165423984">+971 (06) 542 3984</a>
+          <a href="mailto:contact@alshadouf.com">contact@alshadouf.com</a>
+          <a href="#">Industrial Area 6, Sharjah, UAE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Al Shadouf Group. All Rights Reserved.</div>
+        <div>ISO 9001:2015 · DEWA & SEWA Compliant · Heavy Logistics Hub</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function updateYardLiveStatus() {
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const uaeTime = new Date(utc + (3600000 * 4));
+
+      const hours = uaeTime.getHours();
+      const minutes = uaeTime.getMinutes();
+      const seconds = uaeTime.getSeconds();
+      const day = uaeTime.getDay();
+
+      const timeStr = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} GST`;
+      const clockEl = document.getElementById('uaeClock');
+      if (clockEl) clockEl.textContent = timeStr;
+
+      const beacon = document.getElementById('yardBeacon');
+      const text = document.getElementById('yardStatusText');
+      const nextDep = document.getElementById('nextDeparture');
+
+      const isWorkingDay = day !== 0;
+      const isWorkingHour = (hours > 7 || (hours === 7 && minutes >= 30)) && (hours < 19 || (hours === 19 && minutes <= 30));
+
+      if (isWorkingDay && isWorkingHour) {
+        if (beacon) beacon.style.background = 'var(--emerald-live)';
+        if (text) text.innerHTML = '🟢 WAREHOUSE DISPATCH ACTIVE · Overhead Cranes Loading Fleet Now';
+        const minsLeft = 30 - (minutes % 30);
+        if (nextDep) nextDep.textContent = `In ~${minsLeft} Minutes`;
+      } else {
+        if (beacon) beacon.style.background = 'var(--gold)';
+        if (text) text.innerHTML = '🟠 AFTER-HOURS QUEUE · Overnight Inquiries Prioritized at 07:30 GST';
+        if (nextDep) nextDep.textContent = 'Morning Fleet at 07:30 GST';
+      }
+    }
+
+    setInterval(updateYardLiveStatus, 1000);
+    updateYardLiveStatus();
+
+    let selectedDisciplines = ['Electrical & Power Cables'];
+    let generatedToken = '';
+
+    function toggleChip(chip, discipline) {
+      chip.classList.toggle('selected');
+      if (chip.classList.contains('selected')) {
+        if (!selectedDisciplines.includes(discipline)) selectedDisciplines.push(discipline);
+      } else {
+        selectedDisciplines = selectedDisciplines.filter(d => d !== discipline);
+      }
+    }
+
+    function goToStep(step) {
+      const s1 = document.getElementById('step1Container');
+      const s2 = document.getElementById('step2Container');
+      const s3 = document.getElementById('step3Container');
+      const ind1 = document.getElementById('indStep1');
+      const ind2 = document.getElementById('indStep2');
+      const ind3 = document.getElementById('indStep3');
+
+      if (step === 1) {
+        s1.style.display = 'block';
+        s2.style.display = 'none';
+        s3.style.display = 'none';
+        ind1.className = 'wizard-step-indicator active';
+        ind2.className = 'wizard-step-indicator';
+        ind3.className = 'wizard-step-indicator';
+      } else if (step === 2) {
+        s1.style.display = 'none';
+        s2.style.display = 'block';
+        s3.style.display = 'none';
+        ind1.className = 'wizard-step-indicator completed';
+        ind2.className = 'wizard-step-indicator active';
+        ind3.className = 'wizard-step-indicator';
+      } else if (step === 3) {
+        s1.style.display = 'none';
+        s2.style.display = 'none';
+        s3.style.display = 'block';
+        ind1.className = 'wizard-step-indicator completed';
+        ind2.className = 'wizard-step-indicator completed';
+        ind3.className = 'wizard-step-indicator active';
+      }
+    }
+
+    function handleWizardSubmit(e) {
+      e.preventDefault();
+      const randNum = Math.floor(1000 + Math.random() * 9000);
+      generatedToken = `AS-RFQ-2026-${randNum}`;
+      document.getElementById('confTokenPill').textContent = `OFFICIAL TRACKING TOKEN: ${generatedToken}`;
+      goToStep(3);
+    }
+
+    function openWhatsAppConfirmation() {
+      const name = document.getElementById('wizName').value || 'Engineer';
+      const company = document.getElementById('wizCompany').value || 'Contractor';
+      const emirate = document.getElementById('wizEmirate').value;
+      const urgency = document.getElementById('wizUrgency').value;
+      const boq = document.getElementById('wizBOQ').value || 'Standard inquiry';
+
+      const text = `Hello Al Shadouf Estimators,%0A%0AOfficial RFQ Token: ${generatedToken}%0AEngineer: ${name}%0ACompany: ${company}%0AEmirate: ${emirate}%0AUrgency: ${urgency}%0ADisciplines: ${selectedDisciplines.join(', ')}%0A%0ABOQ Scope:%0A${encodeURIComponent(boq)}%0A%0APlease provide priced quotation and MTC confirmation.`;
+      window.open(`https://wa.me/97165423984?text=${text}`, '_blank');
+    }
+
+    function resetWizard() {
+      document.getElementById('wizardForm').reset();
+      selectedDisciplines = ['Electrical & Power Cables'];
+      document.querySelectorAll('.discipline-chip').forEach(c => c.classList.remove('selected'));
+      document.querySelector('.discipline-chip').classList.add('selected');
+      goToStep(1);
+    }
+  </script>
+</body>
+</html>
