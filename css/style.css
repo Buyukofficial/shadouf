@@ -903,3 +903,195 @@ h1, h2, h3, h4, h5, h6 {
   height: 300px !important;
   display: block;
 }
+
+/* ===================================================================
+   SMOOTH SCROLLING & MEANINGFUL KINETIC REVEALS
+   =================================================================== */
+
+/* HTML & Body Lenis Setup */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Top Telemetry Reading Progress Bar */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: rgba(226, 232, 240, 0.4);
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.scroll-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #066AAB, #0284C7, #38BDF8);
+  position: relative;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.scroll-progress-head {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38BDF8;
+  box-shadow: 0 0 12px #38BDF8, 0 0 4px #FFFFFF;
+}
+
+/* Circular SVG Progress Back-to-Top */
+.back-to-top-circle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(6, 106, 171, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 990;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s, box-shadow 0.3s ease;
+}
+
+.back-to-top-circle.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-circle:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(6, 106, 171, 0.25);
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  stroke: rgba(226, 232, 240, 0.8);
+}
+
+.progress-ring-circle {
+  stroke: var(--blue-primary, #066AAB);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.back-to-top-arrow {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy, #0A2540);
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-to-top-circle:hover .back-to-top-arrow {
+  transform: translateY(-2px);
+  color: var(--blue-primary, #066AAB);
+}
+
+/* Meaningful Kinetic Scroll Reveals */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.985);
+  filter: blur(4px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger, 0) * 75ms);
+  will-change: transform, opacity, filter;
+}
+
+.scroll-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Stagger Fade for Grids */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger, 0) * 65ms);
+}
+
+.fade-in.visible, .fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Header Overline Kinetic Line Unfurl */
+.section-header .overline {
+  position: relative;
+}
+
+.section-header .overline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-primary, #066AAB), transparent);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.section-header.in-view .overline::after {
+  width: 60px;
+}
+
+/* Timeline Active Node Pulse */
+.timeline-node {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.timeline-node.node-active {
+  transform: translateX(6px);
+}
+
+.timeline-node.node-active .timeline-year {
+  color: var(--blue-primary, #066AAB);
+  text-shadow: 0 0 16px rgba(6, 106, 171, 0.3);
+}
+
+/* Card Subtle Floating Depth during scroll */
+.bento-card, .product-card, .project-card, .service-card {
+  will-change: transform;
+}
